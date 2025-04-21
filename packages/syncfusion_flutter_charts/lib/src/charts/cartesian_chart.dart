@@ -1470,6 +1470,20 @@ class SfCartesianChartState extends State<SfCartesianChart>
         plotAreaBackgroundImage: widget.plotAreaBackgroundImage,
         plotAreaBackgroundColor: _chartThemeData.plotAreaBackgroundColor,
         children: <Widget>[
+          CartesianAxes(
+            vsync: this,
+            enableAxisAnimation: widget.enableAxisAnimation,
+            isTransposed: isTransposed,
+            onAxisLabelTapped: widget.onAxisLabelTapped,
+            onActualRangeChanged: widget.onActualRangeChanged,
+            indicators: widget.indicators,
+            chartThemeData: _chartThemeData,
+            children: <ChartAxis>[
+              widget.primaryXAxis,
+              widget.primaryYAxis,
+              ...widget.axes
+            ],
+          ),
           CartesianChartPlotArea(
             vsync: this,
             localizations: _localizations,
@@ -1500,20 +1514,6 @@ class SfCartesianChartState extends State<SfCartesianChart>
             chartThemeData: _chartThemeData,
             themeData: _themeData,
             children: widget.series,
-          ),
-          CartesianAxes(
-            vsync: this,
-            enableAxisAnimation: widget.enableAxisAnimation,
-            isTransposed: isTransposed,
-            onAxisLabelTapped: widget.onAxisLabelTapped,
-            onActualRangeChanged: widget.onActualRangeChanged,
-            indicators: widget.indicators,
-            chartThemeData: _chartThemeData,
-            children: <ChartAxis>[
-              widget.primaryXAxis,
-              widget.primaryYAxis,
-              ...widget.axes
-            ],
           ),
           if (widget.indicators.isNotEmpty)
             IndicatorStack(
