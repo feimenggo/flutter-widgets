@@ -1,10 +1,93 @@
-## [28.2.10] - 11/03/2025 
+## Unreleased
+
+### Features
+
+* \#FR68922 - [PlotBand](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/PlotBand-class.html) now provides an option to override its rendering using the `drawRect` and `drawText` methods.
 
 **Bugs**
 
-* \#FB65781 - The [labelsExtent](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/ChartAxis/labelsExtent.html) property now applies padding for each axis in the Cartesian axis.
+* \#GH2464 - Now, the series fill updates correctly when the axis range changes during screen resize or orientation changes.
 
-## Unreleased
+## [31.1.20] - 09/17/2025
+
+**General**
+ 
+* The compatible version of our Flutter charts widget has been updated to Flutter SDK 3.35.0.
+
+## [30.2.6+1] - 20/08/2025 
+
+**Bugs**
+
+* \#GH2400 - Now, the chart no longer throws a layout-phase mutation exception when [autoScrollingDelta](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/ChartAxis/autoScrollingDelta.html) is set and the screen is resized.
+
+## [30.2.6] - 19/08/2025 
+
+**Bugs**
+
+* \#GH2371 - Resolved a panning speed inconsistency that occurred when switching between time intervals in chart axes. The panning logic now uses the updated scale value to ensure consistent interaction behavior across interval changes.
+
+## [30.2.5] - 13/08/2025
+
+**Bugs**
+
+* \#GH2404 - Resolved a layout crash by updating the logic to prevent negative height constraints when rendering [SfCartesianChart](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html) inside very small containers.
+* \#GH2380 - Resolved an issue were updating only one bound of the axis visible range caused fallback to the actual range. The controller now retains the previous visible range value to ensure correct axis rendering.
+
+## [30.1.41] - 22/07/2025 
+
+**Bugs**
+
+* \#BD746428 - Resolved an exception caused by layout-phase mutations in chart elements to ensure compatibility with Flutter SDK 3.32.6.
+
+## [30.1.38] - 02/07/2025
+
+**Bugs**
+
+* \#GH2377 - Now, the [onPointTap](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/ChartSeries/onPointTap.html) callbacks returns the point index properly for visible data points.
+
+## [30.1.37] - 25/06/2025
+
+**General**
+
+* The compatible version of our Flutter charts widget has been updated to Flutter SDK 3.32.0.
+
+### Features
+
+* Enhanced chart legend customization by introducing chart-specific legend item classes (CartesianLegendItem, CircularLegendItem, FunnelLegendItem, and PyramidLegendItem), enabling direct access to series, seriesIndex, and pointIndex.
+* \#FR57680 - Added directional zooming to Cartesian charts for intuitive zoom control based on finger gestures.
+
+## [29.2.4] - 14/05/2025 
+
+**Bugs**
+
+* \#BD718806 - The legend now toggles properly even when the [offset](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/Legend/offset.html) property is set and chart behaviors are enabled.
+
+## [29.1.40] - 29/04/2025 
+
+**Bugs**
+
+* \#GH2334 - Now, the [HistogramSeries](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/HistogramSeries-class.html) will render properly when a single data point is set to the [dataSource](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/ChartSeries/dataSource.html).
+* \#GH2335 - The [onPointDoubleTap](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/ChartSeries/onPointDoubleTap.html) callback is now correctly invoked on double-tap in the chart series.
+
+## [29.1.39] - 22/04/2025
+ 
+**General**
+ 
+*  The minimum Dart version has been updated to 3.7.
+
+## [29.1.37+1] - 09/04/2025 
+
+**Bugs**
+
+* \#FB65781 - - Now, the [`labelsExtent`](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/ChartAxis/labelsExtent.html) properly specifies the space between the axis line and the axis title.
+
+## [29.1.35] - 01/04/2025 
+
+**Bugs**
+
+* \#BD702563 - Now, the [updateDataSource](https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/ChartSeriesController/updateDataSource.html) method properly clears data points when using removedDataIndexes in charts.
+
+## [29.1.33] - 25/03/2025
 
 **General**
 
@@ -13,7 +96,7 @@
 *  The Syncfusion<sup>&reg;</sup> Flutter charts example sample have been updated to support [Swift package manager](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers) in macOS and iOS platforms.
 
 
-## [28.2.8] - 04/03/2025
+## [28.2.9] - 04/03/2025
 
 **Bugs**
 

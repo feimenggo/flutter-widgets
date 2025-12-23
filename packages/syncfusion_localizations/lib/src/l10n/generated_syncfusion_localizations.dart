@@ -16,11 +16,8 @@ import '../global_localizations.dart';
 /// The translations for Afrikaans (`af`).
 class SfLocalizationsAf extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsAf class
-  const SfLocalizationsAf({
-    String localeName = 'af',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsAf({String localeName = 'af'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Na';
@@ -89,7 +86,7 @@ class SfLocalizationsAf extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Begin nie met';
@@ -205,7 +202,9 @@ class SfLocalizationsAf extends SfGlobalLocalizations {
 
   @override
   String get pdfInvalidPageNumberLabel =>
-      r'Voer asseblief ' "'" r'n geldige nommer in';
+      r'Voer asseblief '
+      "'"
+      r'n geldige nommer in';
 
   @override
   String get pdfNoBookmarksLabel => r'Geen boekmerke gevind nie';
@@ -253,10 +252,16 @@ class SfLocalizationsAf extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Onderstreep';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -277,19 +282,31 @@ class SfLocalizationsAf extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Selekteer alles';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Kies ’n datum';
+
+  @override
   String get series => r'Reeks';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. ek';
@@ -362,11 +379,8 @@ class SfLocalizationsAf extends SfGlobalLocalizations {
 /// The translations for Amharic (`am`).
 class SfLocalizationsAm extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsAm class
-  const SfLocalizationsAm({
-    String localeName = 'am',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsAm({String localeName = 'am'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'በኋላ';
@@ -621,6 +635,9 @@ class SfLocalizationsAm extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'ሁሉንም ምረጥ';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'ቀን ይምረጡ';
+
+  @override
   String get series => r'ተከታታይ';
 
   @override
@@ -702,11 +719,8 @@ class SfLocalizationsAm extends SfGlobalLocalizations {
 /// The translations for Arabic (`ar`).
 class SfLocalizationsAr extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsAr class
-  const SfLocalizationsAr({
-    String localeName = 'ar',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsAr({String localeName = 'ar'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'بعد، بعدما';
@@ -808,10 +822,10 @@ class SfLocalizationsAr extends SfGlobalLocalizations {
   String get greaterThanOrEqualDataGridFilteringLabel => r'أكبر من أو يساوي';
 
   @override
-  String get jumada1Label => r'جمادى الاول';
+  String get jumada1Label => r'جمادى الأولى';
 
   @override
-  String get jumada2Label => r'جمادى الثانية';
+  String get jumada2Label => r'جمادى الآخرة';
 
   @override
   String get lessThanDataGridFilteringLabel => r'أقل من';
@@ -820,7 +834,7 @@ class SfLocalizationsAr extends SfGlobalLocalizations {
   String get lessThanOrEqualDataGridFilteringLabel => r'اصغر من او يساوي';
 
   @override
-  String get muharramLabel => r'شهر محرم';
+  String get muharramLabel => r'محرم';
 
   @override
   String get noEventsCalendarLabel => r'لا أحداث';
@@ -940,7 +954,7 @@ class SfLocalizationsAr extends SfGlobalLocalizations {
   String get rabi1Label => r'ربيع الأول';
 
   @override
-  String get rabi2Label => r'ربيع الثاني';
+  String get rabi2Label => r'ربيع الآخر';
 
   @override
   String get rajabLabel => r'رجب';
@@ -952,13 +966,16 @@ class SfLocalizationsAr extends SfGlobalLocalizations {
   String get rowsPerPageDataPagerLabel => r'الصفوف لكل صفحة';
 
   @override
-  String get safarLabel => r'سفر';
+  String get safarLabel => r'صفر';
 
   @override
   String get searchDataGridFilteringLabel => r'يبحث';
 
   @override
   String get selectAllDataGridFilteringLabel => r'اختر الكل';
+
+  @override
+  String get selectADateDataGridFilteringLabel => r'اختر تاريخًا';
 
   @override
   String get series => r'سلسلة';
@@ -976,35 +993,34 @@ class SfLocalizationsAr extends SfGlobalLocalizations {
   String get shortDhualqiLabel => r'ذو القعدة';
 
   @override
-  String get shortJumada1Label => r'جم. أنا';
+  String get shortJumada1Label => r'جمادى الأولى';
 
   @override
-  String get shortJumada2Label => r'جم. ثانيًا';
+  String get shortJumada2Label => r'جمادى الآخرة';
 
   @override
-  String get shortMuharramLabel => r'موه.';
+  String get shortMuharramLabel => r'محرم';
 
   @override
-  String get shortRabi1Label => r'ربيع. أنا';
+  String get shortRabi1Label => r'ربيع الأول';
 
   @override
-  String get shortRabi2Label => r'ربيع. ثانيًا';
+  String get shortRabi2Label => r'ربيع الآخر';
 
   @override
-  String get shortRajabLabel => r'راج.';
+  String get shortRajabLabel => r'رجب';
 
   @override
-  String get shortRamadanLabel =>
-      r'الرامات الذاكرة العشوائية في الهواتف والحواسيب.';
+  String get shortRamadanLabel => r'رمضان';
 
   @override
-  String get shortSafarLabel => r'ساف.';
+  String get shortSafarLabel => r'صفر';
 
   @override
-  String get shortShaabanLabel => r'شا.';
+  String get shortShaabanLabel => r'شعبان';
 
   @override
-  String get shortShawwalLabel => r'شو.';
+  String get shortShawwalLabel => r'شوال';
 
   @override
   String get showRowsWhereDataGridFilteringLabel => r'إظهار الصفوف حيث';
@@ -1047,11 +1063,8 @@ class SfLocalizationsAr extends SfGlobalLocalizations {
 /// The translations for Azerbaijani (`az`).
 class SfLocalizationsAz extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsAz class
-  const SfLocalizationsAz({
-    String localeName = 'az',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsAz({String localeName = 'az'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'sonra';
@@ -1308,6 +1321,9 @@ class SfLocalizationsAz extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Hamısını seç';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Tarixi seçin';
+
+  @override
   String get series => r'Serial';
 
   @override
@@ -1394,11 +1410,8 @@ class SfLocalizationsAz extends SfGlobalLocalizations {
 /// The translations for Belarusian (`be`).
 class SfLocalizationsBe extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsBe class
-  const SfLocalizationsBe({
-    String localeName = 'be',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsBe({String localeName = 'be'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Пасля';
@@ -1656,6 +1669,9 @@ class SfLocalizationsBe extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Абраць усё';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Выберыце дату';
+
+  @override
   String get series => r'серыял';
 
   @override
@@ -1665,10 +1681,18 @@ class SfLocalizationsBe extends SfGlobalLocalizations {
   String get shawwalLabel => r'Шаўваль';
 
   @override
-  String get shortDhualhiLabel => r'Зу' "'" r'л-Х';
+  String get shortDhualhiLabel =>
+      r'Зу'
+      "'"
+      r'л-Х';
 
   @override
-  String get shortDhualqiLabel => r'Зу' "'" r'л-К' "'" r'ю';
+  String get shortDhualqiLabel =>
+      r'Зу'
+      "'"
+      r'л-К'
+      "'"
+      r'ю';
 
   @override
   String get shortJumada1Label => r'Джам. я';
@@ -1741,11 +1765,8 @@ class SfLocalizationsBe extends SfGlobalLocalizations {
 /// The translations for Bulgarian (`bg`).
 class SfLocalizationsBg extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsBg class
-  const SfLocalizationsBg({
-    String localeName = 'bg',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsBg({String localeName = 'bg'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'След';
@@ -2003,6 +2024,9 @@ class SfLocalizationsBg extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Избери всички';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Изберете дата';
+
+  @override
   String get series => r'Серия';
 
   @override
@@ -2088,11 +2112,8 @@ class SfLocalizationsBg extends SfGlobalLocalizations {
 /// The translations for Bengali Bangla (`bn`).
 class SfLocalizationsBn extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsBn class
-  const SfLocalizationsBn({
-    String localeName = 'bn',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsBn({String localeName = 'bn'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'পরে';
@@ -2327,7 +2348,10 @@ class SfLocalizationsBn extends SfGlobalLocalizations {
   String get rabi1Label => r'রবিউল আউয়াল';
 
   @override
-  String get rabi2Label => r'রাবি' "'" r'আল-থানি';
+  String get rabi2Label =>
+      r'রাবি'
+      "'"
+      r'আল-থানি';
 
   @override
   String get rajabLabel => r'রজব';
@@ -2348,10 +2372,16 @@ class SfLocalizationsBn extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'সব নির্বাচন করুন';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'একটি তারিখ নির্বাচন করুন';
+
+  @override
   String get series => r'সিরিজ';
 
   @override
-  String get shaabanLabel => r'শা' "'" r'বান';
+  String get shaabanLabel =>
+      r'শা'
+      "'"
+      r'বান';
 
   @override
   String get shawwalLabel => r'শাওয়াল';
@@ -2433,11 +2463,8 @@ class SfLocalizationsBn extends SfGlobalLocalizations {
 /// The translations for Bosnian (`bs`).
 class SfLocalizationsBs extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsBs class
-  const SfLocalizationsBs({
-    String localeName = 'bs',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsBs({String localeName = 'bs'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Poslije';
@@ -2507,7 +2534,7 @@ class SfLocalizationsBs extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Ne počinje sa';
@@ -2671,10 +2698,16 @@ class SfLocalizationsBs extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Podvući';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -2695,19 +2728,31 @@ class SfLocalizationsBs extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Označi sve';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Odaberite datum';
+
+  @override
   String get series => r'Serije';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. I';
@@ -2780,11 +2825,8 @@ class SfLocalizationsBs extends SfGlobalLocalizations {
 /// The translations for Catalan Valencian (`ca`).
 class SfLocalizationsCa extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsCa class
-  const SfLocalizationsCa({
-    String localeName = 'ca',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsCa({String localeName = 'ca'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Després';
@@ -2854,7 +2896,7 @@ class SfLocalizationsCa extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'No comença amb';
@@ -2926,7 +2968,10 @@ class SfLocalizationsCa extends SfGlobalLocalizations {
   String get ofDataPagerLabel => r'de';
 
   @override
-  String get okDataGridFilteringLabel => r'D' "'" r'acord';
+  String get okDataGridFilteringLabel =>
+      r'D'
+      "'"
+      r'acord';
 
   @override
   String get orDataGridFilteringLabel => r'O';
@@ -2948,7 +2993,7 @@ class SfLocalizationsCa extends SfGlobalLocalizations {
   String get passwordDialogInvalidPasswordLabel => r'contrasenya invàlida';
 
   @override
-  String get pdfBookmarksLabel => r'Adreces d' "'" r'interès';
+  String get pdfBookmarksLabel => "Adreces d'interès";
 
   @override
   String get pdfEnterPageNumberLabel => r'Introduïu el número de pàgina';
@@ -2972,14 +3017,16 @@ class SfLocalizationsCa extends SfGlobalLocalizations {
   String get pdfInvalidPageNumberLabel => r'Introduïu un número vàlid';
 
   @override
-  String get pdfNoBookmarksLabel =>
-      r'No s' "'" r'han trobat adreces d' "'" r'interès';
+  String get pdfNoBookmarksLabel => "No s'han trobat adreces d'interès";
 
   @override
   String get pdfPaginationDialogCancelLabel => r'Cancel·lar';
 
   @override
-  String get pdfPaginationDialogOkLabel => r'D' "'" r'acord';
+  String get pdfPaginationDialogOkLabel =>
+      r'D'
+      "'"
+      r'acord';
 
   @override
   String get pdfPasswordDialogCancelLabel => r'Cancel·lar';
@@ -3019,10 +3066,16 @@ class SfLocalizationsCa extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Subratllar';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -3043,19 +3096,31 @@ class SfLocalizationsCa extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Seleccionar tot';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Selecciona una data';
+
+  @override
   String get series => r'Sèrie';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. jo';
@@ -3128,11 +3193,8 @@ class SfLocalizationsCa extends SfGlobalLocalizations {
 /// The translations for Czech (`cs`).
 class SfLocalizationsCs extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsCs class
-  const SfLocalizationsCs({
-    String localeName = 'cs',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsCs({String localeName = 'cs'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Po';
@@ -3201,7 +3263,7 @@ class SfLocalizationsCs extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Nezačíná s';
@@ -3365,10 +3427,16 @@ class SfLocalizationsCs extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Zdůraznit';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -3389,19 +3457,31 @@ class SfLocalizationsCs extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Vybrat vše';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Vyberte datum';
+
+  @override
   String get series => r'Série';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. já';
@@ -3474,11 +3554,8 @@ class SfLocalizationsCs extends SfGlobalLocalizations {
 /// The translations for Danish (`da`).
 class SfLocalizationsDa extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsDa class
-  const SfLocalizationsDa({
-    String localeName = 'da',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsDa({String localeName = 'da'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Efter';
@@ -3547,7 +3624,7 @@ class SfLocalizationsDa extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Begynder ikke med';
@@ -3711,10 +3788,16 @@ class SfLocalizationsDa extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Understrege';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -3735,19 +3818,31 @@ class SfLocalizationsDa extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Vælg alle';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Vælg en dato';
+
+  @override
   String get series => r'Serie';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. jeg';
@@ -3820,11 +3915,8 @@ class SfLocalizationsDa extends SfGlobalLocalizations {
 /// The translations for German (`de`).
 class SfLocalizationsDe extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsDe class
-  const SfLocalizationsDe({
-    String localeName = 'de',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsDe({String localeName = 'de'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Nach';
@@ -4060,10 +4152,16 @@ class SfLocalizationsDe extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Unterstreichen';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -4084,6 +4182,9 @@ class SfLocalizationsDe extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Wählen Sie Alle';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Wählen Sie ein Datum';
+
+  @override
   String get series => r'Serie';
 
   @override
@@ -4093,10 +4194,16 @@ class SfLocalizationsDe extends SfGlobalLocalizations {
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. ich';
@@ -4169,11 +4276,8 @@ class SfLocalizationsDe extends SfGlobalLocalizations {
 /// The translations for Modern Greek (`el`).
 class SfLocalizationsEl extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsEl class
-  const SfLocalizationsEl({
-    String localeName = 'el',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsEl({String localeName = 'el'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Μετά';
@@ -4243,7 +4347,7 @@ class SfLocalizationsEl extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Δεν ξεκινά με';
@@ -4410,10 +4514,16 @@ class SfLocalizationsEl extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Υπογράμμιση';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Ραμπί' "'" r' αλ-θάνι';
+  String get rabi2Label =>
+      r'Ραμπί'
+      "'"
+      r' αλ-θάνι';
 
   @override
   String get rajabLabel => r'Ρατζάμπ';
@@ -4434,19 +4544,31 @@ class SfLocalizationsEl extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Επιλογή όλων';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Επιλέξτε ημερομηνία';
+
+  @override
   String get series => r'Σειρά';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. Εγώ';
@@ -4520,11 +4642,8 @@ class SfLocalizationsEl extends SfGlobalLocalizations {
 /// The translations for English (`en`).
 class SfLocalizationsEn extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsEn class
-  const SfLocalizationsEn({
-    String localeName = 'en',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsEn({String localeName = 'en'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'After';
@@ -4590,10 +4709,10 @@ class SfLocalizationsEn extends SfGlobalLocalizations {
   String get daySpanCountLabel => r'Day';
 
   @override
-  String get dhualhiLabel => r'Dhu al-Hijjah';
+  String get dhualhiLabel => "Dhu'l-Hijjah";
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu'l-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Does Not Begin With';
@@ -4627,10 +4746,10 @@ class SfLocalizationsEn extends SfGlobalLocalizations {
       r'Greater Than Or Equal';
 
   @override
-  String get jumada1Label => r'Jumada al-awwal';
+  String get jumada1Label => r'Jumada I';
 
   @override
-  String get jumada2Label => r'Jumada al-thani';
+  String get jumada2Label => r'Jumada II';
 
   @override
   String get lessThanDataGridFilteringLabel => r'Less Than';
@@ -4757,10 +4876,16 @@ class SfLocalizationsEn extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Underline';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' I';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' II';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -4781,19 +4906,31 @@ class SfLocalizationsEn extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Select All';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Select a date';
+
+  @override
   String get series => r'Series';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'ban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. I';
@@ -4805,10 +4942,10 @@ class SfLocalizationsEn extends SfGlobalLocalizations {
   String get shortMuharramLabel => r'Muh.';
 
   @override
-  String get shortRabi1Label => r'Rabi. I';
+  String get shortRabi1Label => r'Rab. I';
 
   @override
-  String get shortRabi2Label => r'Rabi. II';
+  String get shortRabi2Label => r'Rab. II';
 
   @override
   String get shortRajabLabel => r'Raj.';
@@ -4866,11 +5003,8 @@ class SfLocalizationsEn extends SfGlobalLocalizations {
 /// The translations for Spanish Castilian (`es`).
 class SfLocalizationsEs extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsEs class
-  const SfLocalizationsEs({
-    String localeName = 'es',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsEs({String localeName = 'es'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Después';
@@ -4925,7 +5059,7 @@ class SfLocalizationsEs extends SfGlobalLocalizations {
   String get cancelDataGridFilteringLabel => r'Cancelar';
 
   @override
-  String get clearFilterDataGridFilteringLabel => r'Filtro claro';
+  String get clearFilterDataGridFilteringLabel => r'Borrar filtro';
 
   @override
   String get containsDataGridFilteringLabel => r'Contiene';
@@ -4940,7 +5074,7 @@ class SfLocalizationsEs extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hiyyah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'no comienza con';
@@ -5012,7 +5146,7 @@ class SfLocalizationsEs extends SfGlobalLocalizations {
   String get ofDataPagerLabel => r'de';
 
   @override
-  String get okDataGridFilteringLabel => r'OK';
+  String get okDataGridFilteringLabel => r'Aceptar';
 
   @override
   String get orDataGridFilteringLabel => r'O';
@@ -5128,19 +5262,31 @@ class SfLocalizationsEs extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Seleccionar todo';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Selecciona una fecha';
+
+  @override
   String get series => r'Serie';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. yo';
@@ -5213,11 +5359,8 @@ class SfLocalizationsEs extends SfGlobalLocalizations {
 /// The translations for Estonian (`et`).
 class SfLocalizationsEt extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsEt class
-  const SfLocalizationsEt({
-    String localeName = 'et',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsEt({String localeName = 'et'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Pärast';
@@ -5286,7 +5429,7 @@ class SfLocalizationsEt extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Ei alga';
@@ -5450,10 +5593,16 @@ class SfLocalizationsEt extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Allajoonimine';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -5474,19 +5623,31 @@ class SfLocalizationsEt extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Vali kõik';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Valige kuupäev';
+
+  @override
   String get series => r'seeria';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. I';
@@ -5559,11 +5720,8 @@ class SfLocalizationsEt extends SfGlobalLocalizations {
 /// The translations for Basque (`eu`).
 class SfLocalizationsEu extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsEu class
-  const SfLocalizationsEu({
-    String localeName = 'eu',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsEu({String localeName = 'eu'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Ondoren';
@@ -5632,7 +5790,7 @@ class SfLocalizationsEu extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Ez Da Hasten';
@@ -5797,10 +5955,16 @@ class SfLocalizationsEu extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Azpimarratu';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -5821,19 +5985,31 @@ class SfLocalizationsEu extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Hautatu guztiak';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Hautatu data bat';
+
+  @override
   String get series => r'Seriea';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Salto. I';
@@ -5906,11 +6082,8 @@ class SfLocalizationsEu extends SfGlobalLocalizations {
 /// The translations for Persian (`fa`).
 class SfLocalizationsFa extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsFa class
-  const SfLocalizationsFa({
-    String localeName = 'fa',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsFa({String localeName = 'fa'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'بعد از';
@@ -6166,6 +6339,9 @@ class SfLocalizationsFa extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'انتخاب همه';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'یک تاریخ انتخاب کنید';
+
+  @override
   String get series => r'سلسله';
 
   @override
@@ -6251,11 +6427,8 @@ class SfLocalizationsFa extends SfGlobalLocalizations {
 /// The translations for Finnish (`fi`).
 class SfLocalizationsFi extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsFi class
-  const SfLocalizationsFi({
-    String localeName = 'fi',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsFi({String localeName = 'fi'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Jälkeen';
@@ -6324,7 +6497,7 @@ class SfLocalizationsFi extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Ei ala';
@@ -6490,10 +6663,16 @@ class SfLocalizationsFi extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Alleviivaus';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -6514,19 +6693,31 @@ class SfLocalizationsFi extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Valitse kaikki';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Valitse päivämäärä';
+
+  @override
   String get series => r'Sarja';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. minä';
@@ -6599,11 +6790,8 @@ class SfLocalizationsFi extends SfGlobalLocalizations {
 /// The translations for Filipino Pilipino (`fil`).
 class SfLocalizationsFil extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsFil class
-  const SfLocalizationsFil({
-    String localeName = 'fil',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsFil({String localeName = 'fil'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Pagkatapos';
@@ -6673,7 +6861,7 @@ class SfLocalizationsFil extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Hindi Nagsisimula Sa';
@@ -6838,10 +7026,16 @@ class SfLocalizationsFil extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Salungguhit';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -6862,19 +7056,31 @@ class SfLocalizationsFil extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Piliin lahat';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Pumili ng petsa';
+
+  @override
   String get series => r'Serye';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. ako';
@@ -6950,11 +7156,8 @@ class SfLocalizationsFil extends SfGlobalLocalizations {
 /// The translations for French (`fr`).
 class SfLocalizationsFr extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsFr class
-  const SfLocalizationsFr({
-    String localeName = 'fr',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsFr({String localeName = 'fr'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Après';
@@ -7024,7 +7227,7 @@ class SfLocalizationsFr extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhou al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Ne commence pas par';
@@ -7036,7 +7239,10 @@ class SfLocalizationsFr extends SfGlobalLocalizations {
   String get doesNotEndWithDataGridFilteringLabel => r'Ne se termine pas par';
 
   @override
-  String get doesNotEqualDataGridFilteringLabel => r'N' "'" r'est pas égal';
+  String get doesNotEqualDataGridFilteringLabel =>
+      r'N'
+      "'"
+      r'est pas égal';
 
   @override
   String get emptyDataGridFilteringLabel => r'Vide';
@@ -7073,7 +7279,7 @@ class SfLocalizationsFr extends SfGlobalLocalizations {
   String get muharramLabel => r'Mouharram';
 
   @override
-  String get noEventsCalendarLabel => r'Pas d' "'" r'événements';
+  String get noEventsCalendarLabel => "Pas d'événements";
 
   @override
   String get noMatchesDataGridFilteringLabel => r'Pas de correspondance';
@@ -7097,7 +7303,10 @@ class SfLocalizationsFr extends SfGlobalLocalizations {
   String get ofDataPagerLabel => r'de';
 
   @override
-  String get okDataGridFilteringLabel => r'D' "'" r'ACCORD';
+  String get okDataGridFilteringLabel =>
+      r'D'
+      "'"
+      r'ACCORD';
 
   @override
   String get orDataGridFilteringLabel => r'Ou';
@@ -7141,7 +7350,9 @@ class SfLocalizationsFr extends SfGlobalLocalizations {
 
   @override
   String get pdfInvalidPageNumberLabel =>
-      r'S' "'" r'il vous plait, entrez un nombre valide';
+      r'S'
+      "'"
+      r'il vous plait, entrez un nombre valide';
 
   @override
   String get pdfNoBookmarksLabel => r'Aucun signet trouvé';
@@ -7190,10 +7401,16 @@ class SfLocalizationsFr extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Souligner';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -7214,19 +7431,31 @@ class SfLocalizationsFr extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Tout sélectionner';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Sélectionnez une date';
+
+  @override
   String get series => r'Série';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. je';
@@ -7290,7 +7519,10 @@ class SfLocalizationsFr extends SfGlobalLocalizations {
   String get textFiltersDataGridFilteringLabel => r'Filtres de texte';
 
   @override
-  String get todayLabel => r'Aujourd' "'" r'hui';
+  String get todayLabel =>
+      r'Aujourd'
+      "'"
+      r'hui';
 
   @override
   String get weeknumberLabel => r'Semaine';
@@ -7299,11 +7531,8 @@ class SfLocalizationsFr extends SfGlobalLocalizations {
 /// The translations for Galician (`gl`).
 class SfLocalizationsGl extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsGl class
-  const SfLocalizationsGl({
-    String localeName = 'gl',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsGl({String localeName = 'gl'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Despois';
@@ -7373,7 +7602,7 @@ class SfLocalizationsGl extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Non Comeza Con';
@@ -7536,10 +7765,16 @@ class SfLocalizationsGl extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Subliñado';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -7560,19 +7795,31 @@ class SfLocalizationsGl extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Seleccionar todo';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Selecciona unha data';
+
+  @override
   String get series => r'Serie';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. eu';
@@ -7645,11 +7892,8 @@ class SfLocalizationsGl extends SfGlobalLocalizations {
 /// The translations for Gujarati (`gu`).
 class SfLocalizationsGu extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsGu class
-  const SfLocalizationsGu({
-    String localeName = 'gu',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsGu({String localeName = 'gu'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'પછી';
@@ -7906,6 +8150,9 @@ class SfLocalizationsGu extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'બધા પસંદ કરો';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'તારીખ પસંદ કરો';
+
+  @override
   String get series => r'શ્રેણી';
 
   @override
@@ -7991,11 +8238,8 @@ class SfLocalizationsGu extends SfGlobalLocalizations {
 /// The translations for Hebrew (`he`).
 class SfLocalizationsHe extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsHe class
-  const SfLocalizationsHe({
-    String localeName = 'he',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsHe({String localeName = 'he'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'לאחר';
@@ -8061,7 +8305,7 @@ class SfLocalizationsHe extends SfGlobalLocalizations {
   String get daySpanCountLabel => r'יְוֹם';
 
   @override
-  String get dhualhiLabel => r'דהו אל-היג' "'" r'ה';
+  String get dhualhiLabel => "דהו אל-היג'ה";
 
   @override
   String get dhualqiLabel => r'דהו אל-קיאדה';
@@ -8097,10 +8341,13 @@ class SfLocalizationsHe extends SfGlobalLocalizations {
   String get greaterThanOrEqualDataGridFilteringLabel => r'גדול או שווה';
 
   @override
-  String get jumada1Label => r'ג' "'" r'ומדה אל-אוול';
+  String get jumada1Label =>
+      r'ג'
+      "'"
+      r'ומדה אל-אוול';
 
   @override
-  String get jumada2Label => r'ג' "'" r'ומדה אל-ת' "'" r'אני';
+  String get jumada2Label => "ג'ומדה אל-ת'אני";
 
   @override
   String get lessThanDataGridFilteringLabel => r'פחות מ';
@@ -8233,7 +8480,10 @@ class SfLocalizationsHe extends SfGlobalLocalizations {
   String get rabi2Label => r'רבי אל-תאני';
 
   @override
-  String get rajabLabel => r'רג' "'" r'אב';
+  String get rajabLabel =>
+      r'רג'
+      "'"
+      r'אב';
 
   @override
   String get ramadanLabel => r'רמדאן';
@@ -8251,6 +8501,9 @@ class SfLocalizationsHe extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'בחר הכל';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'בחר תאריך';
+
+  @override
   String get series => r'סִדרָה';
 
   @override
@@ -8260,16 +8513,29 @@ class SfLocalizationsHe extends SfGlobalLocalizations {
   String get shawwalLabel => r'שווואל';
 
   @override
-  String get shortDhualhiLabel => r'דהו' "'" "'" r'ל-ה';
+  String get shortDhualhiLabel =>
+      r'דהו'
+      "'"
+      "'"
+      r'ל-ה';
 
   @override
-  String get shortDhualqiLabel => r'דהו' "'" r'ל-ק';
+  String get shortDhualqiLabel =>
+      r'דהו'
+      "'"
+      r'ל-ק';
 
   @override
-  String get shortJumada1Label => r'ג' "'" r'אם. אני';
+  String get shortJumada1Label =>
+      r'ג'
+      "'"
+      r'אם. אני';
 
   @override
-  String get shortJumada2Label => r'ג' "'" r'אם. II';
+  String get shortJumada2Label =>
+      r'ג'
+      "'"
+      r'אם. II';
 
   @override
   String get shortMuharramLabel => r'מוה.';
@@ -8281,7 +8547,10 @@ class SfLocalizationsHe extends SfGlobalLocalizations {
   String get shortRabi2Label => r'רבי. II';
 
   @override
-  String get shortRajabLabel => r'ראג' "'" r'.';
+  String get shortRajabLabel =>
+      r'ראג'
+      "'"
+      r'.';
 
   @override
   String get shortRamadanLabel => r'RAM.';
@@ -8299,7 +8568,7 @@ class SfLocalizationsHe extends SfGlobalLocalizations {
   String get showRowsWhereDataGridFilteringLabel => r'הצג שורות היכן';
 
   @override
-  String get sortAToZDataGridFilteringLabel => r'מיין מא' "'" r' עד ת' "'";
+  String get sortAToZDataGridFilteringLabel => "מיין מא' עד ת'";
 
   @override
   String get sortAndFilterDataGridFilteringLabel => r'מיון ומסנן';
@@ -8336,11 +8605,8 @@ class SfLocalizationsHe extends SfGlobalLocalizations {
 /// The translations for Hindi (`hi`).
 class SfLocalizationsHi extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsHi class
-  const SfLocalizationsHi({
-    String localeName = 'hi',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsHi({String localeName = 'hi'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'बाद में';
@@ -8576,7 +8842,10 @@ class SfLocalizationsHi extends SfGlobalLocalizations {
   String get rabi1Label => r'रबी अल-अव्वल';
 
   @override
-  String get rabi2Label => r'रबी ' "'" r'अल-थानी';
+  String get rabi2Label =>
+      r'रबी '
+      "'"
+      r'अल-थानी';
 
   @override
   String get rajabLabel => r'रज्जब';
@@ -8595,6 +8864,9 @@ class SfLocalizationsHi extends SfGlobalLocalizations {
 
   @override
   String get selectAllDataGridFilteringLabel => r'सभी का चयन करे';
+
+  @override
+  String get selectADateDataGridFilteringLabel => r'तारीख चुनें';
 
   @override
   String get series => r'श्रृंखला';
@@ -8683,11 +8955,8 @@ class SfLocalizationsHi extends SfGlobalLocalizations {
 /// The translations for Croatian (`hr`).
 class SfLocalizationsHr extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsHr class
-  const SfLocalizationsHr({
-    String localeName = 'hr',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsHr({String localeName = 'hr'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Nakon';
@@ -8757,7 +9026,7 @@ class SfLocalizationsHr extends SfGlobalLocalizations {
   String get dhualhiLabel => r'zul-hidždže';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Ne počinje s';
@@ -8920,10 +9189,16 @@ class SfLocalizationsHr extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Podvući';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Radžeb';
@@ -8944,10 +9219,16 @@ class SfLocalizationsHr extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Odaberi sve';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Odaberite datum';
+
+  @override
   String get series => r'Niz';
 
   @override
-  String get shaabanLabel => r'ša' "'" r'aban';
+  String get shaabanLabel =>
+      r'ša'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'ševval';
@@ -9029,11 +9310,8 @@ class SfLocalizationsHr extends SfGlobalLocalizations {
 /// The translations for Hungarian (`hu`).
 class SfLocalizationsHu extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsHu class
-  const SfLocalizationsHu({
-    String localeName = 'hu',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsHu({String localeName = 'hu'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Után';
@@ -9102,7 +9380,7 @@ class SfLocalizationsHu extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Nem azzal kezdődik';
@@ -9269,10 +9547,16 @@ class SfLocalizationsHu extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Aláhúzás';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -9293,19 +9577,31 @@ class SfLocalizationsHu extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Mindet kiválaszt';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Válasszon dátumot';
+
+  @override
   String get series => r'Sorozat';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. én';
@@ -9378,11 +9674,8 @@ class SfLocalizationsHu extends SfGlobalLocalizations {
 /// The translations for Armenian (`hy`).
 class SfLocalizationsHy extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsHy class
-  const SfLocalizationsHy({
-    String localeName = 'hy',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsHy({String localeName = 'hy'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'հետո';
@@ -9641,6 +9934,9 @@ class SfLocalizationsHy extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Ընտրել բոլորը';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Ընտրեք ամսաթիվ';
+
+  @override
   String get series => r'Սերիա';
 
   @override
@@ -9726,11 +10022,8 @@ class SfLocalizationsHy extends SfGlobalLocalizations {
 /// The translations for Indonesian (`id`).
 class SfLocalizationsId extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsId class
-  const SfLocalizationsId({
-    String localeName = 'id',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsId({String localeName = 'id'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Setelah';
@@ -9965,10 +10258,16 @@ class SfLocalizationsId extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Menggarisbawahi';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -9989,10 +10288,16 @@ class SfLocalizationsId extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Pilih Semua';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Pilih tanggal';
+
+  @override
   String get series => r'Seri';
 
   @override
-  String get shaabanLabel => r'Sya' "'" r'ban';
+  String get shaabanLabel =>
+      r'Sya'
+      "'"
+      r'ban';
 
   @override
   String get shawwalLabel => r'Syawal';
@@ -10074,11 +10379,8 @@ class SfLocalizationsId extends SfGlobalLocalizations {
 /// The translations for Icelandic (`is`).
 class SfLocalizationsIs extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsIs class
-  const SfLocalizationsIs({
-    String localeName = 'is',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsIs({String localeName = 'is'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Eftir';
@@ -10147,7 +10449,7 @@ class SfLocalizationsIs extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Byrjar ekki á';
@@ -10311,10 +10613,16 @@ class SfLocalizationsIs extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Undirstrika';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -10335,19 +10643,31 @@ class SfLocalizationsIs extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Velja allt';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Veldu dagsetningu';
+
+  @override
   String get series => r'Röð';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. ég';
@@ -10420,11 +10740,8 @@ class SfLocalizationsIs extends SfGlobalLocalizations {
 /// The translations for Italian (`it`).
 class SfLocalizationsIt extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsIt class
-  const SfLocalizationsIt({
-    String localeName = 'it',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsIt({String localeName = 'it'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Dopo';
@@ -10658,10 +10975,16 @@ class SfLocalizationsIt extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Sottolineare';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -10682,19 +11005,31 @@ class SfLocalizationsIt extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Seleziona tutto';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Seleziona una data';
+
+  @override
   String get series => r'Serie';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. io';
@@ -10767,11 +11102,8 @@ class SfLocalizationsIt extends SfGlobalLocalizations {
 /// The translations for Japanese (`ja`).
 class SfLocalizationsJa extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsJa class
-  const SfLocalizationsJa({
-    String localeName = 'ja',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsJa({String localeName = 'ja'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'後';
@@ -11026,6 +11358,9 @@ class SfLocalizationsJa extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'すべて選択';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'日付を選択';
+
+  @override
   String get series => r'シリーズ';
 
   @override
@@ -11108,11 +11443,8 @@ class SfLocalizationsJa extends SfGlobalLocalizations {
 /// The translations for Georgian (`ka`).
 class SfLocalizationsKa extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsKa class
-  const SfLocalizationsKa({
-    String localeName = 'ka',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsKa({String localeName = 'ka'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'შემდეგ';
@@ -11368,6 +11700,9 @@ class SfLocalizationsKa extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Მონიშნე ყველა';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'აირჩიეთ თარიღი';
+
+  @override
   String get series => r'სერიალი';
 
   @override
@@ -11453,11 +11788,8 @@ class SfLocalizationsKa extends SfGlobalLocalizations {
 /// The translations for Kazakh (`kk`).
 class SfLocalizationsKk extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsKk class
-  const SfLocalizationsKk({
-    String localeName = 'kk',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsKk({String localeName = 'kk'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Кейін';
@@ -11689,10 +12021,16 @@ class SfLocalizationsKk extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Астын сызу';
 
   @override
-  String get rabi1Label => r'Раби' "'" r' әл-әууәл';
+  String get rabi1Label =>
+      r'Раби'
+      "'"
+      r' әл-әууәл';
 
   @override
-  String get rabi2Label => r'Раби' "'" r' әл-Тани';
+  String get rabi2Label =>
+      r'Раби'
+      "'"
+      r' әл-Тани';
 
   @override
   String get rajabLabel => r'Ражаб';
@@ -11711,6 +12049,9 @@ class SfLocalizationsKk extends SfGlobalLocalizations {
 
   @override
   String get selectAllDataGridFilteringLabel => r'Барлығын таңдаңыз';
+
+  @override
+  String get selectADateDataGridFilteringLabel => r'Күнді таңдаңыз';
 
   @override
   String get series => r'Сериялар';
@@ -11799,11 +12140,8 @@ class SfLocalizationsKk extends SfGlobalLocalizations {
 /// The translations for Khmer Central Khmer (`km`).
 class SfLocalizationsKm extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsKm class
-  const SfLocalizationsKm({
-    String localeName = 'km',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsKm({String localeName = 'km'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'បន្ទាប់ពី';
@@ -11872,7 +12210,7 @@ class SfLocalizationsKm extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'មិនចាប់ផ្តើមជាមួយ';
@@ -12060,6 +12398,9 @@ class SfLocalizationsKm extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'ជ្រើសរើស​ទាំងអស់';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'ជ្រើសរើសកាលបរិច្ឆេទ';
+
+  @override
   String get series => r'ស៊េរី';
 
   @override
@@ -12069,10 +12410,16 @@ class SfLocalizationsKm extends SfGlobalLocalizations {
   String get shawwalLabel => r'សាវ៉ាវ';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'ជុម ខ្ញុំ';
@@ -12145,11 +12492,8 @@ class SfLocalizationsKm extends SfGlobalLocalizations {
 /// The translations for Kannada (`kn`).
 class SfLocalizationsKn extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsKn class
-  const SfLocalizationsKn({
-    String localeName = 'kn',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsKn({String localeName = 'kn'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => '\u{ca8}\u{c82}\u{ca4}\u{cb0}';
@@ -12472,6 +12816,10 @@ class SfLocalizationsKn extends SfGlobalLocalizations {
       '\u{c8e}\u{cb2}\u{ccd}\u{cb2}\u{cb5}\u{ca8}\u{ccd}\u{ca8}\u{cc1}\u{20}\u{c86}\u{cb0}\u{cbf}\u{cb8}\u{cc1}';
 
   @override
+  String get selectADateDataGridFilteringLabel =>
+      '\u{0ca6}\u{0cbf}\u{0ca8}\u{0cbe}\u{0c82}\u{0c95}\u{cb5}\u{0ca8}\u{0ccd}\u{0ca8}\u{cc1} \u{0c86}\u{0caf}\u{ccd}\u{0c95}\u{cc6}\u{0cae}\u{0cbe}\u{0ca1}\u{cbf}';
+
+  @override
   String get series => '\u{cb8}\u{cb0}\u{ca3}\u{cbf}';
 
   @override
@@ -12565,11 +12913,8 @@ class SfLocalizationsKn extends SfGlobalLocalizations {
 /// The translations for Korean (`ko`).
 class SfLocalizationsKo extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsKo class
-  const SfLocalizationsKo({
-    String localeName = 'ko',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsKo({String localeName = 'ko'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'후에';
@@ -12824,6 +13169,9 @@ class SfLocalizationsKo extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'모두 선택';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'날짜를 선택하세요';
+
+  @override
   String get series => r'시리즈';
 
   @override
@@ -12905,11 +13253,8 @@ class SfLocalizationsKo extends SfGlobalLocalizations {
 /// The translations for Kirghiz Kyrgyz (`ky`).
 class SfLocalizationsKy extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsKy class
-  const SfLocalizationsKy({
-    String localeName = 'ky',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsKy({String localeName = 'ky'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Кийин';
@@ -13165,6 +13510,9 @@ class SfLocalizationsKy extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Баарын тандаңыз';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Датаны тандаңыз';
+
+  @override
   String get series => r'Сериялар';
 
   @override
@@ -13251,11 +13599,8 @@ class SfLocalizationsKy extends SfGlobalLocalizations {
 /// The translations for Lao (`lo`).
 class SfLocalizationsLo extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsLo class
-  const SfLocalizationsLo({
-    String localeName = 'lo',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsLo({String localeName = 'lo'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'ຫຼັງຈາກ';
@@ -13325,7 +13670,7 @@ class SfLocalizationsLo extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'ບໍ່ໄດ້ເລີ່ມຕົ້ນດ້ວຍ';
@@ -13488,10 +13833,16 @@ class SfLocalizationsLo extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'ຂີດເສັ້ນລຸ່ມ';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -13512,6 +13863,9 @@ class SfLocalizationsLo extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'ເລືອກ​ທັງ​ຫມົດ';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'ເລືອກວັນທີ';
+
+  @override
   String get series => r'ຊຸດ';
 
   @override
@@ -13521,10 +13875,16 @@ class SfLocalizationsLo extends SfGlobalLocalizations {
   String get shawwalLabel => r'ຊະວາວ';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'ຈູມ. I';
@@ -13597,11 +13957,8 @@ class SfLocalizationsLo extends SfGlobalLocalizations {
 /// The translations for Lithuanian (`lt`).
 class SfLocalizationsLt extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsLt class
-  const SfLocalizationsLt({
-    String localeName = 'lt',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsLt({String localeName = 'lt'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Po to';
@@ -13670,7 +14027,7 @@ class SfLocalizationsLt extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Neprasideda su';
@@ -13833,7 +14190,10 @@ class SfLocalizationsLt extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Pabraukite';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
   String get rabi2Label => r'Rabis al-Thanis';
@@ -13857,6 +14217,9 @@ class SfLocalizationsLt extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Pasirinkti viską';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Pasirinkite datą';
+
+  @override
   String get series => r'Serija';
 
   @override
@@ -13866,10 +14229,16 @@ class SfLocalizationsLt extends SfGlobalLocalizations {
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. aš';
@@ -13942,11 +14311,8 @@ class SfLocalizationsLt extends SfGlobalLocalizations {
 /// The translations for Latvian (`lv`).
 class SfLocalizationsLv extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsLv class
-  const SfLocalizationsLv({
-    String localeName = 'lv',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsLv({String localeName = 'lv'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Pēc';
@@ -14015,7 +14381,7 @@ class SfLocalizationsLv extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hidžja';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Nesākas ar';
@@ -14180,7 +14546,10 @@ class SfLocalizationsLv extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Pasvītrot';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
   String get rabi2Label => r'Rabī al-tani';
@@ -14204,6 +14573,9 @@ class SfLocalizationsLv extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Izvēlēties visus';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Izvēlieties datumu';
+
+  @override
   String get series => r'sērija';
 
   @override
@@ -14213,10 +14585,16 @@ class SfLocalizationsLv extends SfGlobalLocalizations {
   String get shawwalLabel => r'Šovals';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. es';
@@ -14289,11 +14667,8 @@ class SfLocalizationsLv extends SfGlobalLocalizations {
 /// The translations for Macedonian (`mk`).
 class SfLocalizationsMk extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsMk class
-  const SfLocalizationsMk({
-    String localeName = 'mk',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsMk({String localeName = 'mk'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'По';
@@ -14553,6 +14928,9 @@ class SfLocalizationsMk extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Селектирај се';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Изберете датум';
+
+  @override
   String get series => r'Серии';
 
   @override
@@ -14565,7 +14943,10 @@ class SfLocalizationsMk extends SfGlobalLocalizations {
   String get shortDhualhiLabel => r'Дул-Х';
 
   @override
-  String get shortDhualqiLabel => r'Ду' "'" r'л-К';
+  String get shortDhualqiLabel =>
+      r'Ду'
+      "'"
+      r'л-К';
 
   @override
   String get shortJumada1Label => r'Џум. Јас';
@@ -14638,11 +15019,8 @@ class SfLocalizationsMk extends SfGlobalLocalizations {
 /// The translations for Malayalam (`ml`).
 class SfLocalizationsMl extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsMl class
-  const SfLocalizationsMl({
-    String localeName = 'ml',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsMl({String localeName = 'ml'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'ശേഷം';
@@ -14902,6 +15280,9 @@ class SfLocalizationsMl extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'എല്ലാം തിരഞ്ഞെടുക്കുക';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'തീയതി തിരഞ്ഞെടുക്കുക';
+
+  @override
   String get series => r'പരമ്പര';
 
   @override
@@ -14987,11 +15368,8 @@ class SfLocalizationsMl extends SfGlobalLocalizations {
 /// The translations for Mongolian (`mn`).
 class SfLocalizationsMn extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsMn class
-  const SfLocalizationsMn({
-    String localeName = 'mn',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsMn({String localeName = 'mn'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Дараа';
@@ -15224,10 +15602,16 @@ class SfLocalizationsMn extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Доогуур зур';
 
   @override
-  String get rabi1Label => r'Раби' "'" r' аль-аввал';
+  String get rabi1Label =>
+      r'Раби'
+      "'"
+      r' аль-аввал';
 
   @override
-  String get rabi2Label => r'Раби' "'" r' аль-Тани';
+  String get rabi2Label =>
+      r'Раби'
+      "'"
+      r' аль-Тани';
 
   @override
   String get rajabLabel => r'Ражаб';
@@ -15246,6 +15630,9 @@ class SfLocalizationsMn extends SfGlobalLocalizations {
 
   @override
   String get selectAllDataGridFilteringLabel => r'Бүгдийг сонгох';
+
+  @override
+  String get selectADateDataGridFilteringLabel => r'Огноо сонгоно уу';
 
   @override
   String get series => r'Цуврал';
@@ -15333,11 +15720,8 @@ class SfLocalizationsMn extends SfGlobalLocalizations {
 /// The translations for Marathi (`mr`).
 class SfLocalizationsMr extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsMr class
-  const SfLocalizationsMr({
-    String localeName = 'mr',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsMr({String localeName = 'mr'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'नंतर';
@@ -15594,6 +15978,9 @@ class SfLocalizationsMr extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'सर्व निवडा';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'तारीख निवडा';
+
+  @override
   String get series => r'मालिका';
 
   @override
@@ -15680,11 +16067,8 @@ class SfLocalizationsMr extends SfGlobalLocalizations {
 /// The translations for Malay (`ms`).
 class SfLocalizationsMs extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsMs class
-  const SfLocalizationsMs({
-    String localeName = 'ms',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsMs({String localeName = 'ms'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Selepas';
@@ -15753,7 +16137,7 @@ class SfLocalizationsMs extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dzulhijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Tidak Bermula Dengan';
@@ -15919,10 +16303,16 @@ class SfLocalizationsMs extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Garis bawah';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -15943,10 +16333,16 @@ class SfLocalizationsMs extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Pilih semua';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Pilih tarikh';
+
+  @override
   String get series => r'Siri';
 
   @override
-  String get shaabanLabel => r'Sya' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sya'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Syawal';
@@ -16028,11 +16424,8 @@ class SfLocalizationsMs extends SfGlobalLocalizations {
 /// The translations for Burmese (`my`).
 class SfLocalizationsMy extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsMy class
-  const SfLocalizationsMy({
-    String localeName = 'my',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsMy({String localeName = 'my'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'ပြီးနောက်';
@@ -16102,7 +16495,7 @@ class SfLocalizationsMy extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'ဖြင့် မစတင်ပါ။';
@@ -16268,10 +16661,16 @@ class SfLocalizationsMy extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'မျဉ်းသား';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'ရာဂျပ်';
@@ -16292,19 +16691,31 @@ class SfLocalizationsMy extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'အားလုံးကို ရွေးပါ။';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'ရက်စွဲကိုရွေးပါ';
+
+  @override
   String get series => r'စီးရီး';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum ငါ';
@@ -16377,11 +16788,8 @@ class SfLocalizationsMy extends SfGlobalLocalizations {
 /// The translations for Norwegian Bokmål (`nb`).
 class SfLocalizationsNb extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsNb class
-  const SfLocalizationsNb({
-    String localeName = 'nb',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsNb({String localeName = 'nb'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Etter';
@@ -16450,7 +16858,7 @@ class SfLocalizationsNb extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Begynner ikke med';
@@ -16614,10 +17022,16 @@ class SfLocalizationsNb extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Understrek';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -16638,19 +17052,31 @@ class SfLocalizationsNb extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Velg alle';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Velg en dato';
+
+  @override
   String get series => r'Serie';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. Jeg';
@@ -16723,11 +17149,8 @@ class SfLocalizationsNb extends SfGlobalLocalizations {
 /// The translations for Nepali (`ne`).
 class SfLocalizationsNe extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsNe class
-  const SfLocalizationsNe({
-    String localeName = 'ne',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsNe({String localeName = 'ne'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'पछि';
@@ -16986,6 +17409,9 @@ class SfLocalizationsNe extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'सबै छान्नु';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'मिति चयन गर्नुहोस्';
+
+  @override
   String get series => r'शृङ्खला';
 
   @override
@@ -17072,11 +17498,8 @@ class SfLocalizationsNe extends SfGlobalLocalizations {
 /// The translations for Dutch Flemish (`nl`).
 class SfLocalizationsNl extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsNl class
-  const SfLocalizationsNl({
-    String localeName = 'nl',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsNl({String localeName = 'nl'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Na';
@@ -17145,7 +17568,7 @@ class SfLocalizationsNl extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Begint niet met';
@@ -17224,7 +17647,10 @@ class SfLocalizationsNl extends SfGlobalLocalizations {
   String get orDataGridFilteringLabel => r'Of';
 
   @override
-  String get pagesDataPagerLabel => r'Pagina' "'" r's';
+  String get pagesDataPagerLabel =>
+      r'Pagina'
+      "'"
+      r's';
 
   @override
   String get passwordDialogContentLabel =>
@@ -17291,10 +17717,16 @@ class SfLocalizationsNl extends SfGlobalLocalizations {
   String get pdfSignaturePadDialogPenColorLabel => r'Pen Kleur';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-Awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-Awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get pdfSignaturePadDialogSaveLabel => r'Opslaan';
@@ -17333,10 +17765,16 @@ class SfLocalizationsNl extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Selecteer alles';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Selecteer een datum';
+
+  @override
   String get series => r'Serie';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
@@ -17345,7 +17783,10 @@ class SfLocalizationsNl extends SfGlobalLocalizations {
   String get shortDhualhiLabel => r'Dhul-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. l';
@@ -17418,11 +17859,8 @@ class SfLocalizationsNl extends SfGlobalLocalizations {
 /// The translations for Norwegian (`no`).
 class SfLocalizationsNo extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsNo class
-  const SfLocalizationsNo({
-    String localeName = 'no',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsNo({String localeName = 'no'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Etter';
@@ -17491,7 +17929,7 @@ class SfLocalizationsNo extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Begynner ikke med';
@@ -17655,10 +18093,16 @@ class SfLocalizationsNo extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Understrek';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -17679,19 +18123,31 @@ class SfLocalizationsNo extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Velg alle';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Velg en dato';
+
+  @override
   String get series => r'Serie';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. Jeg';
@@ -17764,11 +18220,8 @@ class SfLocalizationsNo extends SfGlobalLocalizations {
 /// The translations for Oriya (`or`).
 class SfLocalizationsOr extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsOr class
-  const SfLocalizationsOr({
-    String localeName = 'or',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsOr({String localeName = 'or'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'ପରେ';
@@ -18004,10 +18457,16 @@ class SfLocalizationsOr extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'ଅଣ୍ଡରଲାଇନ୍ |';
 
   @override
-  String get rabi1Label => r'ରବି ' "'" r'ଅଲ-ଅୱାଲ୍ |';
+  String get rabi1Label =>
+      r'ରବି '
+      "'"
+      r'ଅଲ-ଅୱାଲ୍ |';
 
   @override
-  String get rabi2Label => r'ରବି ' "'" r'ଅଲ-ଥାନି |';
+  String get rabi2Label =>
+      r'ରବି '
+      "'"
+      r'ଅଲ-ଥାନି |';
 
   @override
   String get rajabLabel => r'ରାଜାବ';
@@ -18026,6 +18485,9 @@ class SfLocalizationsOr extends SfGlobalLocalizations {
 
   @override
   String get selectAllDataGridFilteringLabel => r'ସବୁ ବାଛ';
+
+  @override
+  String get selectADateDataGridFilteringLabel => r'ତାରିଖ ବାଛନ୍ତୁ';
 
   @override
   String get series => r'ସିରିଜ୍';
@@ -18114,11 +18576,8 @@ class SfLocalizationsOr extends SfGlobalLocalizations {
 /// The translations for Panjabi Punjabi (`pa`).
 class SfLocalizationsPa extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsPa class
-  const SfLocalizationsPa({
-    String localeName = 'pa',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsPa({String localeName = 'pa'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'ਤੋਂ ਬਾਅਦ';
@@ -18288,11 +18747,16 @@ class SfLocalizationsPa extends SfGlobalLocalizations {
   String get pdfEnterPageNumberLabel => r'ਪੰਨਾ ਨੰਬਰ ਦਰਜ ਕਰੋ';
 
   @override
-  String get pdfGoToPageLabel => r'ਪੰਨੇ ' "'" r'ਤੇ ਜਾਓ';
+  String get pdfGoToPageLabel =>
+      r'ਪੰਨੇ '
+      "'"
+      r'ਤੇ ਜਾਓ';
 
   @override
   String get pdfHyperlinkContentLabel =>
-      r'ਕੀ ਤੁਸੀਂ ' "'" r'ਤੇ ਪੰਨਾ ਖੋਲ੍ਹਣਾ ਚਾਹੁੰਦੇ ਹੋ';
+      r'ਕੀ ਤੁਸੀਂ '
+      "'"
+      r'ਤੇ ਪੰਨਾ ਖੋਲ੍ਹਣਾ ਚਾਹੁੰਦੇ ਹੋ';
 
   @override
   String get pdfHyperlinkDialogCancelLabel => r'ਰੱਦ ਕਰੋ';
@@ -18374,6 +18838,9 @@ class SfLocalizationsPa extends SfGlobalLocalizations {
 
   @override
   String get selectAllDataGridFilteringLabel => r'ਸਾਰਿਆ ਨੂੰ ਚੁਣੋ';
+
+  @override
+  String get selectADateDataGridFilteringLabel => r'ਤਾਰੀਖ ਚੁਣੋ';
 
   @override
   String get series => r'ਲੜੀ';
@@ -18461,11 +18928,8 @@ class SfLocalizationsPa extends SfGlobalLocalizations {
 /// The translations for Polish (`pl`).
 class SfLocalizationsPl extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsPl class
-  const SfLocalizationsPl({
-    String localeName = 'pl',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsPl({String localeName = 'pl'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Później';
@@ -18534,7 +18998,7 @@ class SfLocalizationsPl extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Du al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Nie zaczyna się od';
@@ -18685,7 +19149,10 @@ class SfLocalizationsPl extends SfGlobalLocalizations {
   String get rabi1Label => r'Rabi al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Radżab';
@@ -18721,19 +19188,31 @@ class SfLocalizationsPl extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Zaznacz wszystko';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Wybierz datę';
+
+  @override
   String get series => r'Seria';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'sok. I';
@@ -18806,11 +19285,8 @@ class SfLocalizationsPl extends SfGlobalLocalizations {
 /// The translations for Pushto Pashto (`ps`).
 class SfLocalizationsPs extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsPs class
-  const SfLocalizationsPs({
-    String localeName = 'ps',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsPs({String localeName = 'ps'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'وروسته';
@@ -19068,6 +19544,9 @@ class SfLocalizationsPs extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'ټول وټاکئ';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'یوه نېټه وټاکئ';
+
+  @override
   String get series => r'لړۍ';
 
   @override
@@ -19153,11 +19632,8 @@ class SfLocalizationsPs extends SfGlobalLocalizations {
 /// The translations for Portuguese (`pt`).
 class SfLocalizationsPt extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsPt class
-  const SfLocalizationsPt({
-    String localeName = 'pt',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsPt({String localeName = 'pt'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Depois';
@@ -19227,7 +19703,7 @@ class SfLocalizationsPt extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Não começa com';
@@ -19390,10 +19866,16 @@ class SfLocalizationsPt extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Sublinhado';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -19414,19 +19896,31 @@ class SfLocalizationsPt extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Selecionar tudo';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Selecione uma data';
+
+  @override
   String get series => r'Series';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. EU';
@@ -19499,11 +19993,8 @@ class SfLocalizationsPt extends SfGlobalLocalizations {
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
 class SfLocalizationsPtPt extends SfLocalizationsPt {
   /// Creating an argument constructor of SfLocalizationsPtPt class
-  const SfLocalizationsPtPt({
-    String localeName = 'pt_PT',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsPtPt({String localeName = 'pt_PT'})
+    : super(localeName: localeName);
 
   @override
   String get pdfEnterPageNumberLabel => r'Digite o número da página';
@@ -19515,11 +20006,8 @@ class SfLocalizationsPtPt extends SfLocalizationsPt {
 /// The translations for Romanian Moldavian Moldovan (`ro`).
 class SfLocalizationsRo extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsRo class
-  const SfLocalizationsRo({
-    String localeName = 'ro',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsRo({String localeName = 'ro'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'După';
@@ -19589,7 +20077,7 @@ class SfLocalizationsRo extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Nu Începe Cu';
@@ -19753,10 +20241,16 @@ class SfLocalizationsRo extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Subliniați';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -19777,19 +20271,31 @@ class SfLocalizationsRo extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Selectează tot';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Selectați o dată';
+
+  @override
   String get series => r'Serie';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. eu';
@@ -19862,11 +20368,8 @@ class SfLocalizationsRo extends SfGlobalLocalizations {
 /// The translations for Russian (`ru`).
 class SfLocalizationsRu extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsRu class
-  const SfLocalizationsRu({
-    String localeName = 'ru',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsRu({String localeName = 'ru'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'После';
@@ -20123,6 +20626,9 @@ class SfLocalizationsRu extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Выбрать все';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Выберите дату';
+
+  @override
   String get series => r'Серии';
 
   @override
@@ -20208,11 +20714,8 @@ class SfLocalizationsRu extends SfGlobalLocalizations {
 /// The translations for Sinhala Sinhalese (`si`).
 class SfLocalizationsSi extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsSi class
-  const SfLocalizationsSi({
-    String localeName = 'si',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsSi({String localeName = 'si'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'පසු';
@@ -20281,7 +20784,7 @@ class SfLocalizationsSi extends SfGlobalLocalizations {
   String get dhualhiLabel => r'ඩු අල්-හිජ්ජා';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'සමඟ ආරම්භ නොවේ';
@@ -20469,6 +20972,9 @@ class SfLocalizationsSi extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'සියල්ල තෝරන්න';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'දිනය තෝරන්න';
+
+  @override
   String get series => r'මාලාවක්';
 
   @override
@@ -20554,11 +21060,8 @@ class SfLocalizationsSi extends SfGlobalLocalizations {
 /// The translations for Slovak (`sk`).
 class SfLocalizationsSk extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsSk class
-  const SfLocalizationsSk({
-    String localeName = 'sk',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsSk({String localeName = 'sk'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Po';
@@ -20627,7 +21130,7 @@ class SfLocalizationsSk extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Nezačína s';
@@ -20791,10 +21294,16 @@ class SfLocalizationsSk extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Zdôrazniť';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -20815,19 +21324,31 @@ class SfLocalizationsSk extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Vybrať všetko';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Vyberte dátum';
+
+  @override
   String get series => r'séria';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. ja';
@@ -20900,11 +21421,8 @@ class SfLocalizationsSk extends SfGlobalLocalizations {
 /// The translations for Slovenian (`sl`).
 class SfLocalizationsSl extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsSl class
-  const SfLocalizationsSl({
-    String localeName = 'sl',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsSl({String localeName = 'sl'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Po';
@@ -20973,7 +21491,7 @@ class SfLocalizationsSl extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Se ne začne z';
@@ -21136,10 +21654,16 @@ class SfLocalizationsSl extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Podčrtaj';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -21160,19 +21684,31 @@ class SfLocalizationsSl extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Izberi vse';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Izberite datum';
+
+  @override
   String get series => r'serija';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. jaz';
@@ -21245,11 +21781,8 @@ class SfLocalizationsSl extends SfGlobalLocalizations {
 /// The translations for Albanian (`sq`).
 class SfLocalizationsSq extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsSq class
-  const SfLocalizationsSq({
-    String localeName = 'sq',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsSq({String localeName = 'sq'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Pas';
@@ -21485,10 +22018,16 @@ class SfLocalizationsSq extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Nënvizoj';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r'ul-evvel';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r'ul-evvel';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rexheb';
@@ -21509,6 +22048,9 @@ class SfLocalizationsSq extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Selektoj të gjitha';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Zgjidhni një datë';
+
+  @override
   String get series => r'Seria';
 
   @override
@@ -21521,7 +22063,10 @@ class SfLocalizationsSq extends SfGlobalLocalizations {
   String get shortDhualhiLabel => r'Dhul-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-K';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-K';
 
   @override
   String get shortJumada1Label => r'Jum. I';
@@ -21594,11 +22139,8 @@ class SfLocalizationsSq extends SfGlobalLocalizations {
 /// The translations for Serbian (`sr`).
 class SfLocalizationsSr extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsSr class
-  const SfLocalizationsSr({
-    String localeName = 'sr',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsSr({String localeName = 'sr'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'После';
@@ -21668,7 +22210,7 @@ class SfLocalizationsSr extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Дху ал-Хијјах';
 
   @override
-  String get dhualqiLabel => r'Дху ал-Ки' "'" r'дах';
+  String get dhualqiLabel => "Дху ал-Ки'дах";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Не почиње са';
@@ -21832,10 +22374,16 @@ class SfLocalizationsSr extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Подвући';
 
   @override
-  String get rabi1Label => r'Раби' "'" r' ал-аввал';
+  String get rabi1Label =>
+      r'Раби'
+      "'"
+      r' ал-аввал';
 
   @override
-  String get rabi2Label => r'Раби' "'" r' ал-тхани';
+  String get rabi2Label =>
+      r'Раби'
+      "'"
+      r' ал-тхани';
 
   @override
   String get rajabLabel => r'Раџаб';
@@ -21856,19 +22404,31 @@ class SfLocalizationsSr extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Изабери све';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Изаберите датум';
+
+  @override
   String get series => r'Сериес';
 
   @override
-  String get shaabanLabel => r'Сха' "'" r'абан';
+  String get shaabanLabel =>
+      r'Сха'
+      "'"
+      r'абан';
 
   @override
   String get shawwalLabel => r'Схаввал';
 
   @override
-  String get shortDhualhiLabel => r'Дху' "'" r'л-Х';
+  String get shortDhualhiLabel =>
+      r'Дху'
+      "'"
+      r'л-Х';
 
   @override
-  String get shortDhualqiLabel => r'Дху' "'" r'л-К';
+  String get shortDhualqiLabel =>
+      r'Дху'
+      "'"
+      r'л-К';
 
   @override
   String get shortJumada1Label => r'Јум. И';
@@ -21941,21 +22501,15 @@ class SfLocalizationsSr extends SfGlobalLocalizations {
 /// The translations for Serbian, using the Cyrillic script (`sr_Cyrl`).
 class SfLocalizationsSrCyrl extends SfLocalizationsSr {
   /// Creating an argument constructor of SfLocalizationsSrCyrl class
-  const SfLocalizationsSrCyrl({
-    String localeName = 'sr_Cyrl',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsSrCyrl({String localeName = 'sr_Cyrl'})
+    : super(localeName: localeName);
 }
 
 /// The translations for Swedish (`sv`).
 class SfLocalizationsSv extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsSv class
-  const SfLocalizationsSv({
-    String localeName = 'sv',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsSv({String localeName = 'sv'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Efter';
@@ -22024,7 +22578,7 @@ class SfLocalizationsSv extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Börjar inte med';
@@ -22189,10 +22743,16 @@ class SfLocalizationsSv extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Understrykning';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -22213,19 +22773,31 @@ class SfLocalizationsSv extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Välj alla';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Välj ett datum';
+
+  @override
   String get series => r'Serier';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. jag';
@@ -22298,11 +22870,8 @@ class SfLocalizationsSv extends SfGlobalLocalizations {
 /// The translations for Swahili (`sw`).
 class SfLocalizationsSw extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsSw class
-  const SfLocalizationsSw({
-    String localeName = 'sw',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsSw({String localeName = 'sw'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Baada ya';
@@ -22371,7 +22940,7 @@ class SfLocalizationsSw extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Huanza Na';
@@ -22535,10 +23104,16 @@ class SfLocalizationsSw extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Piga mstari';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -22559,19 +23134,31 @@ class SfLocalizationsSw extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Chagua Zote';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Chagua tarehe';
+
+  @override
   String get series => r'Msururu';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. I';
@@ -22644,11 +23231,8 @@ class SfLocalizationsSw extends SfGlobalLocalizations {
 /// The translations for Tamil (`ta`).
 class SfLocalizationsTa extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsTa class
-  const SfLocalizationsTa({
-    String localeName = 'ta',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsTa({String localeName = 'ta'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'பிறகு';
@@ -22717,7 +23301,7 @@ class SfLocalizationsTa extends SfGlobalLocalizations {
   String get dhualhiLabel => r'து அல்-ஹிஜ்ஜா';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'உடன் தொடங்கவில்லை';
@@ -22908,6 +23492,9 @@ class SfLocalizationsTa extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'அனைத்தையும் தெரிவுசெய்';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'தேதியைத் தேர்ந்தெடுக்கவும்';
+
+  @override
   String get series => r'தொடர்';
 
   @override
@@ -22996,11 +23583,8 @@ class SfLocalizationsTa extends SfGlobalLocalizations {
 /// The translations for Telugu (`te`).
 class SfLocalizationsTe extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsTe class
-  const SfLocalizationsTe({
-    String localeName = 'te',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsTe({String localeName = 'te'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'తర్వాత';
@@ -23069,7 +23653,7 @@ class SfLocalizationsTe extends SfGlobalLocalizations {
   String get dhualhiLabel => r'ధు అల్-హిజ్జా';
 
   @override
-  String get dhualqiLabel => r'ధు అల్-కి' "'" r'దా';
+  String get dhualqiLabel => "ధు అల్-కి'దా";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'తో ప్రారంభం కాదు';
@@ -23259,6 +23843,9 @@ class SfLocalizationsTe extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'అన్ని ఎంచుకోండి';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'తేదీని ఎంచుకోండి';
+
+  @override
   String get series => r'సిరీస్';
 
   @override
@@ -23348,11 +23935,8 @@ class SfLocalizationsTe extends SfGlobalLocalizations {
 /// The translations for Thai (`th`).
 class SfLocalizationsTh extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsTh class
-  const SfLocalizationsTh({
-    String localeName = 'th',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsTh({String localeName = 'th'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'หลังจาก';
@@ -23607,6 +24191,9 @@ class SfLocalizationsTh extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'เลือกทั้งหมด';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'เลือกวันที่';
+
+  @override
   String get series => r'ชุด';
 
   @override
@@ -23692,11 +24279,8 @@ class SfLocalizationsTh extends SfGlobalLocalizations {
 /// The translations for Tagalog (`tl`).
 class SfLocalizationsTl extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsTl class
-  const SfLocalizationsTl({
-    String localeName = 'tl',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsTl({String localeName = 'tl'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Pagkatapos';
@@ -23766,7 +24350,7 @@ class SfLocalizationsTl extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Hindi Nagsisimula Sa';
@@ -23931,10 +24515,16 @@ class SfLocalizationsTl extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Salungguhit';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -23955,19 +24545,31 @@ class SfLocalizationsTl extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Piliin lahat';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Pumili ng petsa';
+
+  @override
   String get series => r'Serye';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. ako';
@@ -24043,11 +24645,8 @@ class SfLocalizationsTl extends SfGlobalLocalizations {
 /// The translations for Turkish (`tr`).
 class SfLocalizationsTr extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsTr class
-  const SfLocalizationsTr({
-    String localeName = 'tr',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsTr({String localeName = 'tr'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Sonrasında';
@@ -24117,7 +24716,7 @@ class SfLocalizationsTr extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Zilhicce';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'İle Başlamıyor';
@@ -24166,7 +24765,7 @@ class SfLocalizationsTr extends SfGlobalLocalizations {
   String get muharramLabel => r'Muharrem';
 
   @override
-  String get noEventsCalendarLabel => r'Olay yok';
+  String get noEventsCalendarLabel => r'Etkinlik yok';
 
   @override
   String get noMatchesDataGridFilteringLabel => r'Eşleşme yok';
@@ -24283,10 +24882,16 @@ class SfLocalizationsTr extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Altını çizmek';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r'ul-evvel';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r'ul-evvel';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Recep';
@@ -24305,6 +24910,9 @@ class SfLocalizationsTr extends SfGlobalLocalizations {
 
   @override
   String get selectAllDataGridFilteringLabel => r'Hepsini seç';
+
+  @override
+  String get selectADateDataGridFilteringLabel => r'Bir tarih seçin';
 
   @override
   String get series => r'Diziler';
@@ -24355,8 +24963,7 @@ class SfLocalizationsTr extends SfGlobalLocalizations {
   String get showRowsWhereDataGridFilteringLabel => r'satırları göster';
 
   @override
-  String get sortAToZDataGridFilteringLabel =>
-      r'A' "'" r'dan Z' "'" r'ye Sırala';
+  String get sortAToZDataGridFilteringLabel => "A'dan Z'ye Sırala";
 
   @override
   String get sortAndFilterDataGridFilteringLabel => r'Sırala ve Filtrele';
@@ -24378,8 +24985,7 @@ class SfLocalizationsTr extends SfGlobalLocalizations {
       r'Küçükten Büyüğe Sırala';
 
   @override
-  String get sortZToADataGridFilteringLabel =>
-      r'Z' "'" r'den A' "'" r'ya Sırala';
+  String get sortZToADataGridFilteringLabel => "Z'den A'ya Sırala";
 
   @override
   String get textFiltersDataGridFilteringLabel => r'Metin Filtreleri';
@@ -24394,11 +25000,8 @@ class SfLocalizationsTr extends SfGlobalLocalizations {
 /// The translations for Ukrainian (`uk`).
 class SfLocalizationsUk extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsUk class
-  const SfLocalizationsUk({
-    String localeName = 'uk',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsUk({String localeName = 'uk'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'після';
@@ -24654,6 +25257,9 @@ class SfLocalizationsUk extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Вибрати все';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Виберіть дату';
+
+  @override
   String get series => r'Серія';
 
   @override
@@ -24663,10 +25269,18 @@ class SfLocalizationsUk extends SfGlobalLocalizations {
   String get shawwalLabel => r'Шавваль';
 
   @override
-  String get shortDhualhiLabel => r'Зу' "'" r'л-Х';
+  String get shortDhualhiLabel =>
+      r'Зу'
+      "'"
+      r'л-Х';
 
   @override
-  String get shortDhualqiLabel => r'Зу' "'" r'л-К' "'" r'ю';
+  String get shortDhualqiLabel =>
+      r'Зу'
+      "'"
+      r'л-К'
+      "'"
+      r'ю';
 
   @override
   String get shortJumada1Label => r'стрибати я';
@@ -24739,11 +25353,8 @@ class SfLocalizationsUk extends SfGlobalLocalizations {
 /// The translations for Urdu (`ur`).
 class SfLocalizationsUr extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsUr class
-  const SfLocalizationsUr({
-    String localeName = 'ur',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsUr({String localeName = 'ur'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'کے بعد';
@@ -25000,6 +25611,9 @@ class SfLocalizationsUr extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'تمام منتخب کریں';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'تاریخ منتخب کریں';
+
+  @override
   String get series => r'سلسلہ';
 
   @override
@@ -25085,11 +25699,8 @@ class SfLocalizationsUr extends SfGlobalLocalizations {
 /// The translations for Uzbek (`uz`).
 class SfLocalizationsUz extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsUz class
-  const SfLocalizationsUz({
-    String localeName = 'uz',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsUz({String localeName = 'uz'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Keyin';
@@ -25173,7 +25784,10 @@ class SfLocalizationsUz extends SfGlobalLocalizations {
   String get doesNotEqualDataGridFilteringLabel => r'Teng emas';
 
   @override
-  String get emptyDataGridFilteringLabel => r'Bo' "'" r'sh';
+  String get emptyDataGridFilteringLabel =>
+      r'Bo'
+      "'"
+      r'sh';
 
   @override
   String get endsWithDataGridFilteringLabel => r'Bilan tugaydi';
@@ -25215,7 +25829,10 @@ class SfLocalizationsUz extends SfGlobalLocalizations {
   String get noSelectedDateCalendarLabel => r'Tanlangan sana yo‘q';
 
   @override
-  String get notEmptyDataGridFilteringLabel => r'Bo' "'" r'sh emas';
+  String get notEmptyDataGridFilteringLabel =>
+      r'Bo'
+      "'"
+      r'sh emas';
 
   @override
   String get notNullDataGridFilteringLabel => r'Null emas';
@@ -25258,7 +25875,7 @@ class SfLocalizationsUz extends SfGlobalLocalizations {
   String get pdfEnterPageNumberLabel => r'Sahifa raqamini kiriting';
 
   @override
-  String get pdfGoToPageLabel => r'Sahifaga o' "'" r'tish';
+  String get pdfGoToPageLabel => "Sahifaga o'tish";
 
   @override
   String get pdfHyperlinkContentLabel => r'sahifani ochmoqchimisiz';
@@ -25312,7 +25929,10 @@ class SfLocalizationsUz extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuHighlightLabel => r'Ajratish';
 
   @override
-  String get pdfTextSelectionMenuSquigglyLabel => r'Buzg' "'" r'unchi';
+  String get pdfTextSelectionMenuSquigglyLabel =>
+      r'Buzg'
+      "'"
+      r'unchi';
 
   @override
   String get pdfTextSelectionMenuStrikethroughLabel => r'Chizilgan';
@@ -25321,10 +25941,16 @@ class SfLocalizationsUz extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'tagiga chizish';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r'ul-avval';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r'ul-avval';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' as-saniy';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' as-saniy';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -25345,10 +25971,16 @@ class SfLocalizationsUz extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Hammasini belgilash';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Sanani tanlang';
+
+  @override
   String get series => r'Seriya';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'bon';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'bon';
 
   @override
   String get shawwalLabel => r'Shavvol';
@@ -25391,7 +26023,7 @@ class SfLocalizationsUz extends SfGlobalLocalizations {
 
   @override
   String get showRowsWhereDataGridFilteringLabel =>
-      r'Qaerda qatorlarni ko' "'" r'rsatish';
+      "Qaerda qatorlarni ko'rsatish";
 
   @override
   String get sortAToZDataGridFilteringLabel => r'A dan Z gacha tartiblang';
@@ -25431,11 +26063,8 @@ class SfLocalizationsUz extends SfGlobalLocalizations {
 /// The translations for Vietnamese (`vi`).
 class SfLocalizationsVi extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsVi class
-  const SfLocalizationsVi({
-    String localeName = 'vi',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsVi({String localeName = 'vi'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Sau';
@@ -25505,7 +26134,7 @@ class SfLocalizationsVi extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'không bắt đầu bằng';
@@ -25667,10 +26296,16 @@ class SfLocalizationsVi extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'gạch chân';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -25691,19 +26326,31 @@ class SfLocalizationsVi extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Chọn tất cả';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Chọn ngày';
+
+  @override
   String get series => r'Loạt';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. Tôi';
@@ -25776,11 +26423,8 @@ class SfLocalizationsVi extends SfGlobalLocalizations {
 /// The translations for Chinese (`zh`).
 class SfLocalizationsZh extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsZh class
-  const SfLocalizationsZh({
-    String localeName = 'zh',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsZh({String localeName = 'zh'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'后';
@@ -25849,7 +26493,7 @@ class SfLocalizationsZh extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'不以开头';
@@ -26035,6 +26679,9 @@ class SfLocalizationsZh extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'全选';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'選擇日期';
+
+  @override
   String get series => r'系列';
 
   @override
@@ -26044,10 +26691,16 @@ class SfLocalizationsZh extends SfGlobalLocalizations {
   String get shawwalLabel => r'肖瓦尔';
 
   @override
-  String get shortDhualhiLabel => r'Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'滚。我';
@@ -26116,21 +26769,15 @@ class SfLocalizationsZh extends SfGlobalLocalizations {
 /// The translations for Chinese, using the Han script (`zh_Hans`).
 class SfLocalizationsZhHans extends SfLocalizationsZh {
   /// Creating an argument constructor of SfLocalizationsZhHans class
-  const SfLocalizationsZhHans({
-    String localeName = 'zh_Hans',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsZhHans({String localeName = 'zh_Hans'})
+    : super(localeName: localeName);
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
 class SfLocalizationsZhHant extends SfLocalizationsZh {
   /// Creating an argument constructor of SfLocalizationsZhHant class
-  const SfLocalizationsZhHant({
-    String localeName = 'zh_Hant',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsZhHant({String localeName = 'zh_Hant'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'後';
@@ -26355,21 +27002,15 @@ class SfLocalizationsZhHant extends SfLocalizationsZh {
 /// The translations for Chinese, as used in Hong Kong, using the Han script (`zh_Hant_HK`).
 class SfLocalizationsZhHantHk extends SfLocalizationsZhHant {
   /// Creating an argument constructor of SfLocalizationsZhHantHk class
-  const SfLocalizationsZhHantHk({
-    String localeName = 'zh_Hant_HK',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsZhHantHk({String localeName = 'zh_Hant_HK'})
+    : super(localeName: localeName);
 }
 
 /// The translations for Chinese, as used in Taiwan, using the Han script (`zh_Hant_TW`).
 class SfLocalizationsZhHantTw extends SfLocalizationsZhHant {
   /// Creating an argument constructor of SfLocalizationsZhHantTw class
-  const SfLocalizationsZhHantTw({
-    String localeName = 'zh_Hant_TW',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsZhHantTw({String localeName = 'zh_Hant_TW'})
+    : super(localeName: localeName);
 
   @override
   String get pdfPasswordDialogOpenLabel => r'打開';
@@ -26384,11 +27025,8 @@ class SfLocalizationsZhHantTw extends SfLocalizationsZhHant {
 /// The translations for Zulu (`zu`).
 class SfLocalizationsZu extends SfGlobalLocalizations {
   /// Creating an argument constructor of SfLocalizationsZu class
-  const SfLocalizationsZu({
-    String localeName = 'zu',
-  }) : super(
-          localeName: localeName,
-        );
+  const SfLocalizationsZu({String localeName = 'zu'})
+    : super(localeName: localeName);
 
   @override
   String get afterDataGridFilteringLabel => r'Ngemva';
@@ -26459,7 +27097,7 @@ class SfLocalizationsZu extends SfGlobalLocalizations {
   String get dhualhiLabel => r'Dhu al-Hijjah';
 
   @override
-  String get dhualqiLabel => r'Dhu al-Qi' "'" r'dah';
+  String get dhualqiLabel => "Dhu al-Qi'dah";
 
   @override
   String get doesNotBeginWithDataGridFilteringLabel => r'Ayiqali Nge';
@@ -26624,10 +27262,16 @@ class SfLocalizationsZu extends SfGlobalLocalizations {
   String get pdfTextSelectionMenuUnderlineLabel => r'Dwebela';
 
   @override
-  String get rabi1Label => r'Rabi' "'" r' al-awwal';
+  String get rabi1Label =>
+      r'Rabi'
+      "'"
+      r' al-awwal';
 
   @override
-  String get rabi2Label => r'Rabi' "'" r' al-thani';
+  String get rabi2Label =>
+      r'Rabi'
+      "'"
+      r' al-thani';
 
   @override
   String get rajabLabel => r'Rajab';
@@ -26648,19 +27292,31 @@ class SfLocalizationsZu extends SfGlobalLocalizations {
   String get selectAllDataGridFilteringLabel => r'Khetha konke';
 
   @override
+  String get selectADateDataGridFilteringLabel => r'Khetha usuku';
+
+  @override
   String get series => r'Uchungechunge';
 
   @override
-  String get shaabanLabel => r'Sha' "'" r'aban';
+  String get shaabanLabel =>
+      r'Sha'
+      "'"
+      r'aban';
 
   @override
   String get shawwalLabel => r'Shawwal';
 
   @override
-  String get shortDhualhiLabel => r'U-Dhu' "'" r'l-H';
+  String get shortDhualhiLabel =>
+      r'U-Dhu'
+      "'"
+      r'l-H';
 
   @override
-  String get shortDhualqiLabel => r'Dhu' "'" r'l-Q';
+  String get shortDhualqiLabel =>
+      r'Dhu'
+      "'"
+      r'l-Q';
 
   @override
   String get shortJumada1Label => r'Jum. I';
@@ -26731,85 +27387,86 @@ class SfLocalizationsZu extends SfGlobalLocalizations {
 }
 
 /// The set of supported languages, as language code strings.
-final Set<String> kSyncfusionSupportedLanguages =
-    HashSet<String>.from(const <String>[
-  'af', // Afrikaans
-  'am', // Amharic
-  'ar', // Arabic
-  'az', // Azerbaijani
-  'be', // Belarusian
-  'bg', // Bulgarian
-  'bn', // Bengali Bangla
-  'bs', // Bosnian
-  'ca', // Catalan Valencian
-  'cs', // Czech
-  'da', // Danish
-  'de', // German
-  'el', // Modern Greek
-  'en', // English
-  'es', // Spanish Castilian
-  'et', // Estonian
-  'eu', // Basque
-  'fa', // Persian
-  'fi', // Finnish
-  'fil', // Filipino Pilipino
-  'fr', // French
-  'gl', // Galician
-  'gu', // Gujarati
-  'he', // Hebrew
-  'hi', // Hindi
-  'hr', // Croatian
-  'hu', // Hungarian
-  'hy', // Armenian
-  'id', // Indonesian
-  'is', // Icelandic
-  'it', // Italian
-  'ja', // Japanese
-  'ka', // Georgian
-  'kk', // Kazakh
-  'km', // Khmer Central Khmer
-  'kn', // Kannada
-  'ko', // Korean
-  'ky', // Kirghiz Kyrgyz
-  'lo', // Lao
-  'lt', // Lithuanian
-  'lv', // Latvian
-  'mk', // Macedonian
-  'ml', // Malayalam
-  'mn', // Mongolian
-  'mr', // Marathi
-  'ms', // Malay
-  'my', // Burmese
-  'nb', // Norwegian Bokmål
-  'ne', // Nepali
-  'nl', // Dutch Flemish
-  'no', // Norwegian
-  'or', // Oriya
-  'pa', // Panjabi Punjabi
-  'pl', // Polish
-  'ps', // Pushto Pashto
-  'pt', // Portuguese
-  'ro', // Romanian Moldavian Moldovan
-  'ru', // Russian
-  'si', // Sinhala Sinhalese
-  'sk', // Slovak
-  'sl', // Slovenian
-  'sq', // Albanian
-  'sr', // Serbian
-  'sv', // Swedish
-  'sw', // Swahili
-  'ta', // Tamil
-  'te', // Telugu
-  'th', // Thai
-  'tl', // Tagalog
-  'tr', // Turkish
-  'uk', // Ukrainian
-  'ur', // Urdu
-  'uz', // Uzbek
-  'vi', // Vietnamese
-  'zh', // Chinese
-  'zu', // Zulu
-]);
+final Set<String> kSyncfusionSupportedLanguages = HashSet<String>.from(
+  const <String>[
+    'af', // Afrikaans
+    'am', // Amharic
+    'ar', // Arabic
+    'az', // Azerbaijani
+    'be', // Belarusian
+    'bg', // Bulgarian
+    'bn', // Bengali Bangla
+    'bs', // Bosnian
+    'ca', // Catalan Valencian
+    'cs', // Czech
+    'da', // Danish
+    'de', // German
+    'el', // Modern Greek
+    'en', // English
+    'es', // Spanish Castilian
+    'et', // Estonian
+    'eu', // Basque
+    'fa', // Persian
+    'fi', // Finnish
+    'fil', // Filipino Pilipino
+    'fr', // French
+    'gl', // Galician
+    'gu', // Gujarati
+    'he', // Hebrew
+    'hi', // Hindi
+    'hr', // Croatian
+    'hu', // Hungarian
+    'hy', // Armenian
+    'id', // Indonesian
+    'is', // Icelandic
+    'it', // Italian
+    'ja', // Japanese
+    'ka', // Georgian
+    'kk', // Kazakh
+    'km', // Khmer Central Khmer
+    'kn', // Kannada
+    'ko', // Korean
+    'ky', // Kirghiz Kyrgyz
+    'lo', // Lao
+    'lt', // Lithuanian
+    'lv', // Latvian
+    'mk', // Macedonian
+    'ml', // Malayalam
+    'mn', // Mongolian
+    'mr', // Marathi
+    'ms', // Malay
+    'my', // Burmese
+    'nb', // Norwegian Bokmål
+    'ne', // Nepali
+    'nl', // Dutch Flemish
+    'no', // Norwegian
+    'or', // Oriya
+    'pa', // Panjabi Punjabi
+    'pl', // Polish
+    'ps', // Pushto Pashto
+    'pt', // Portuguese
+    'ro', // Romanian Moldavian Moldovan
+    'ru', // Russian
+    'si', // Sinhala Sinhalese
+    'sk', // Slovak
+    'sl', // Slovenian
+    'sq', // Albanian
+    'sr', // Serbian
+    'sv', // Swedish
+    'sw', // Swahili
+    'ta', // Tamil
+    'te', // Telugu
+    'th', // Thai
+    'tl', // Tagalog
+    'tr', // Turkish
+    'uk', // Ukrainian
+    'ur', // Urdu
+    'uz', // Uzbek
+    'vi', // Vietnamese
+    'zh', // Chinese
+    'zu', // Zulu
+  ],
+);
 
 /// Creates a [SfGlobalLocalizations] instance for the given `locale`.
 ///
@@ -26901,9 +27558,7 @@ final Set<String> kSyncfusionSupportedLanguages =
 ///
 /// Generally speaking, this method is only intended to be used by
 /// [SfGlobalLocalizations.delegate].
-SfGlobalLocalizations? getSyncfusionTranslation(
-  Locale locale,
-) {
+SfGlobalLocalizations? getSyncfusionTranslation(Locale locale) {
   switch (locale.languageCode) {
     case 'af':
       return const SfLocalizationsAf();
@@ -27096,7 +27751,9 @@ SfGlobalLocalizations? getSyncfusionTranslation(
     case 'zu':
       return const SfLocalizationsZu();
   }
-  assert(false,
-      'getSyncfusionTranslation() called for unsupported locale "$locale"');
+  assert(
+    false,
+    'getSyncfusionTranslation() called for unsupported locale "$locale"',
+  );
   return null;
 }

@@ -25,8 +25,9 @@ Future<void> saveAndLaunchFile(List<int> bytes, String fileName) async {
       path = directory.path;
     }
   } else {
-    path = await path_provider_interface.PathProviderPlatform.instance
-        .getApplicationSupportPath();
+    path =
+        await path_provider_interface.PathProviderPlatform.instance
+            .getApplicationSupportPath();
   }
 
   final String fileLocation =

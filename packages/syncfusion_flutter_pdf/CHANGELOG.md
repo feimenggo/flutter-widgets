@@ -1,5 +1,172 @@
 ## Unreleased
 
+- No changes.
+
+## [31.2.15] - 11/25/2025
+
+**Bugs**
+
+- Resolved an issue where the time zone sign and the offset value were incorrect for negative offset time zones in the PdfSignature dictionary.
+
+## [31.2.12] - 11/18/2025
+
+- No changes.
+
+## [31.2.10] - 11/12/2025
+
+- No changes.
+
+## [31.2.5] - 11/04/2025
+
+- No changes.
+
+## [31.2.4] - 10/28/2025
+
+- No changes.
+
+## [31.2.3] - 10/22/2025
+
+- No changes.
+
+## [31.2.2] - 10/15/2025
+
+- No changes.
+
+## [31.1.23] - 10/07/2025
+
+**Bugs**
+
+- Resolved an issue where the application freezes when extracting text from a specific PDF document
+
+## [31.1.22] - 10/01/2025
+
+- No changes.
+
+## [31.1.21] - 09/23/2025
+
+- No changes.
+
+## [31.1.20] - 09/17/2025
+
+**Bugs**
+
+- Resolved a typecast error encountered while accessing a form in a specific PDF document.
+
+## [31.1.19] - 09/12/2025
+
+- No changes.
+
+## [31.1.18] - 09/10/2025
+
+- No changes.
+
+## [31.1.17] - 09/05/2025
+
+- No changes.
+
+## [30.2.7] - 08/26/2025
+
+**Bugs**
+
+- Resolved an issue related to incorrect glyph bounding in a specific PDF document.
+
+## [30.2.6] - 08/19/2025
+
+**Bugs**
+
+- Fixed performance lag during loading encrypted PDF document.
+
+## [30.2.5] - 08/13/2025
+
+**Bugs**
+
+- Resolved an issue where the application hangs when accessing the read-only value of a form field in a specific PDF document.
+
+## [30.2.4] - 08/07/2025
+
+**Bugs**
+
+* Resolved an issue while extracting text line bounds from 90-degree rotated pages in a specific PDF document.
+
+## [30.1.41] - 07/22/2025
+
+**Bugs**
+
+* Resolved an exception that occurred when removing document-level layers in a specific PDF document.
+
+## [30.1.37] - 06/25/2025
+
+**General**
+
+* The compatible version of our Flutter PDF library has been updated to Flutter SDK 3.32.0.
+
+## [29.2.11] - 06/17/2025
+
+**Bugs**
+
+* Resolved an exception that occurred when hiding document-level layers in a specific PDF document.
+
+## [29.2.9] - 06/05/2025 
+
+**Bugs**
+
+* Resolved a mismatch error in the text word length and text glyph length from a specific PDF document.
+
+## [29.2.7] - 05/27/2025 
+
+**Bugs**
+
+* Resolved a range error exception while extracting text lines from a specific PDF document.
+
+## [29.2.4] - 05/14/2025 
+
+**Bugs**
+
+* Resolved an Out-Of-Memory crash that occurred during the decryption of PDF document.
+* Resolved a performance issue when decrypting password-protected PDF documents.
+
+## [29.1.41] - 05/06/2025
+
+**Bugs**
+
+* Resolved an issue where an exception occurred when flattening a signature field in a PDF document.
+
+## [29.1.40] - 04/29/2025
+
+**Bugs**
+
+* Resolved a content preservation issue that occurred when drawing multiple PDF grids on the same page of a PDF document.
+* Resolved an issue where PDF form is returned as null when acro form has no fields.
+
+## [29.1.39] - 04/22/2025
+
+**General**
+
+* The minimum Dart version has been updated to 3.7.
+
+## [29.1.38] - 04/15/2025
+
+**Bugs**
+
+* Resolved an issue where the null check operator was incorrectly used on a nullable value.
+* Resolved an issue where the PDF was shifting towards the top right corner when drawing existing page templates on PDFs.
+* Exception occurs when getting the bounds of the text box form field item in a document has been resolved.
+
+## [29.1.37] - 04/08/2025
+
+**Bugs**
+
+* Resolved the invalid cross reference table issue occurs while loading the specific PDF document.
+* Resolved the Layer name not preserved properly while removing layers in the PDF document
+
+## [29.1.35] - 04/01/2025
+
+**Bugs**
+
+* Resolved the exception that occurred while decrypting PDF files on the Flutter web platform.
+
+## [29.1.33] - 03/25/2025
+
 **General**
 
 *  The compatible version of our Flutter PDF library has been updated to Flutter SDK 3.29.0.
@@ -390,7 +557,7 @@
 
 **Breaking changes**
 
-* The `save` method has been changed to an asynchronous type in the `PdfDocument` and the `saveSync` method has been added for synchronous.
+* The `save` method has been changed to an asynchronous type in the `PdfDocument` and the `saveSync` method has been added for synchronous.
 
 **Features**
 

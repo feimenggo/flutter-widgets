@@ -152,10 +152,10 @@ class SfCartesianChart extends StatefulWidget {
     this.enableMultiSelection = false,
     this.crosshairBehavior,
     this.trackballBehavior,
-    this.series = const <CartesianSeries>[],
+    this.series = const <CartesianSeries<dynamic, dynamic>>[],
     this.title = const ChartTitle(),
     this.axes = const <ChartAxis>[],
-    this.indicators = const <TechnicalIndicator>[],
+    this.indicators = const <TechnicalIndicator<dynamic, dynamic>>[],
   }) : super(key: key);
 
   /// Customizes the chart title.
@@ -990,7 +990,7 @@ class SfCartesianChart extends StatefulWidget {
   ///      );
   /// }
   /// ```
-  final List<CartesianSeries> series;
+  final List<CartesianSeries<dynamic, dynamic>> series;
 
   /// Color palette for chart series. If the series color is not specified,
   /// then the series will be rendered with appropriate palette color.
@@ -1008,7 +1008,7 @@ class SfCartesianChart extends StatefulWidget {
   final List<Color>? palette;
 
   /// Technical indicators for charts.
-  final List<TechnicalIndicator> indicators;
+  final List<TechnicalIndicator<dynamic, dynamic>> indicators;
 
   /// A builder that builds the widget (ex., loading indicator or load more
   /// button) to display at the top of the chart area when horizontal scrolling
@@ -1181,125 +1181,170 @@ class SfCartesianChartState extends State<SfCartesianChart>
   Widget? _trackballBuilder;
 
   SfChartThemeData _updateThemeData(
-      BuildContext context, ChartThemeData effectiveChartThemeData) {
+    BuildContext context,
+    ChartThemeData effectiveChartThemeData,
+  ) {
     SfChartThemeData chartThemeData = SfChartTheme.of(context);
     chartThemeData = chartThemeData.copyWith(
       axisLineColor:
           chartThemeData.axisLineColor ?? effectiveChartThemeData.axisLineColor,
-      axisLabelColor: chartThemeData.axisLabelColor ??
+      axisLabelColor:
+          chartThemeData.axisLabelColor ??
           effectiveChartThemeData.axisLabelColor,
-      axisTitleColor: chartThemeData.axisTitleColor ??
+      axisTitleColor:
+          chartThemeData.axisTitleColor ??
           effectiveChartThemeData.axisTitleColor,
-      titleTextColor: chartThemeData.titleTextColor ??
+      titleTextColor:
+          chartThemeData.titleTextColor ??
           effectiveChartThemeData.titleTextColor,
-      crosshairBackgroundColor: chartThemeData.crosshairBackgroundColor ??
+      crosshairBackgroundColor:
+          chartThemeData.crosshairBackgroundColor ??
           effectiveChartThemeData.crosshairBackgroundColor,
-      crosshairLabelColor: chartThemeData.crosshairLabelColor ??
+      crosshairLabelColor:
+          chartThemeData.crosshairLabelColor ??
           effectiveChartThemeData.crosshairLabelColor,
-      legendTextColor: chartThemeData.legendTextColor ??
+      legendTextColor:
+          chartThemeData.legendTextColor ??
           effectiveChartThemeData.legendTextColor,
-      legendTitleColor: chartThemeData.legendTitleColor ??
+      legendTitleColor:
+          chartThemeData.legendTitleColor ??
           effectiveChartThemeData.legendTitleColor,
-      majorGridLineColor: chartThemeData.majorGridLineColor ??
+      majorGridLineColor:
+          chartThemeData.majorGridLineColor ??
           effectiveChartThemeData.majorGridLineColor,
-      minorGridLineColor: chartThemeData.minorGridLineColor ??
+      minorGridLineColor:
+          chartThemeData.minorGridLineColor ??
           effectiveChartThemeData.minorGridLineColor,
-      majorTickLineColor: chartThemeData.majorTickLineColor ??
+      majorTickLineColor:
+          chartThemeData.majorTickLineColor ??
           effectiveChartThemeData.majorTickLineColor,
-      minorTickLineColor: chartThemeData.minorTickLineColor ??
+      minorTickLineColor:
+          chartThemeData.minorTickLineColor ??
           effectiveChartThemeData.minorTickLineColor,
-      selectionRectColor: chartThemeData.selectionRectColor ??
+      selectionRectColor:
+          chartThemeData.selectionRectColor ??
           effectiveChartThemeData.selectionRectColor,
-      selectionRectBorderColor: chartThemeData.selectionRectBorderColor ??
+      selectionRectBorderColor:
+          chartThemeData.selectionRectBorderColor ??
           effectiveChartThemeData.selectionRectBorderColor,
       selectionTooltipConnectorLineColor:
           chartThemeData.selectionTooltipConnectorLineColor ??
-              effectiveChartThemeData.selectionTooltipConnectorLineColor,
-      waterfallConnectorLineColor: chartThemeData.waterfallConnectorLineColor ??
+          effectiveChartThemeData.selectionTooltipConnectorLineColor,
+      waterfallConnectorLineColor:
+          chartThemeData.waterfallConnectorLineColor ??
           effectiveChartThemeData.waterfallConnectorLineColor,
-      tooltipLabelColor: chartThemeData.tooltipLabelColor ??
+      tooltipLabelColor:
+          chartThemeData.tooltipLabelColor ??
           effectiveChartThemeData.tooltipLabelColor,
-      tooltipSeparatorColor: chartThemeData.tooltipSeparatorColor ??
+      tooltipSeparatorColor:
+          chartThemeData.tooltipSeparatorColor ??
           effectiveChartThemeData.tooltipSeparatorColor,
-      backgroundColor: widget.backgroundColor ??
+      backgroundColor:
+          widget.backgroundColor ??
           chartThemeData.backgroundColor ??
           effectiveChartThemeData.backgroundColor,
-      titleBackgroundColor: widget.title.backgroundColor ??
+      titleBackgroundColor:
+          widget.title.backgroundColor ??
           chartThemeData.titleBackgroundColor ??
           effectiveChartThemeData.titleBackgroundColor,
-      plotAreaBackgroundColor: widget.plotAreaBackgroundColor ??
+      plotAreaBackgroundColor:
+          widget.plotAreaBackgroundColor ??
           chartThemeData.plotAreaBackgroundColor ??
           effectiveChartThemeData.plotAreaBackgroundColor,
-      plotAreaBorderColor: widget.plotAreaBorderColor ??
+      plotAreaBorderColor:
+          widget.plotAreaBorderColor ??
           chartThemeData.plotAreaBorderColor ??
           effectiveChartThemeData.plotAreaBorderColor,
-      legendBackgroundColor: widget.legend.backgroundColor ??
+      legendBackgroundColor:
+          widget.legend.backgroundColor ??
           chartThemeData.legendBackgroundColor ??
           effectiveChartThemeData.legendBackgroundColor,
-      crosshairLineColor: widget.crosshairBehavior?.lineColor ??
+      crosshairLineColor:
+          widget.crosshairBehavior?.lineColor ??
           chartThemeData.crosshairLineColor ??
           effectiveChartThemeData.crosshairLineColor,
-      tooltipColor: widget.tooltipBehavior?.color ??
+      tooltipColor:
+          widget.tooltipBehavior?.color ??
           chartThemeData.tooltipColor ??
           effectiveChartThemeData.tooltipColor,
       titleTextStyle: effectiveChartThemeData.titleTextStyle!
           .copyWith(
-              color: chartThemeData.titleTextColor ??
-                  effectiveChartThemeData.titleTextColor)
+            color:
+                chartThemeData.titleTextColor ??
+                effectiveChartThemeData.titleTextColor,
+          )
           .merge(chartThemeData.titleTextStyle)
           .merge(widget.title.textStyle),
       axisTitleTextStyle: effectiveChartThemeData.axisTitleTextStyle!
           .copyWith(
-              color: chartThemeData.axisTitleColor ??
-                  effectiveChartThemeData.axisTitleColor)
+            color:
+                chartThemeData.axisTitleColor ??
+                effectiveChartThemeData.axisTitleColor,
+          )
           .merge(chartThemeData.axisTitleTextStyle),
       axisLabelTextStyle: effectiveChartThemeData.axisLabelTextStyle!
           .copyWith(
-              color: chartThemeData.axisLabelColor ??
-                  effectiveChartThemeData.axisLabelColor)
+            color:
+                chartThemeData.axisLabelColor ??
+                effectiveChartThemeData.axisLabelColor,
+          )
           .merge(chartThemeData.axisLabelTextStyle),
       axisMultiLevelLabelTextStyle: effectiveChartThemeData
           .axisMultiLevelLabelTextStyle!
           .copyWith(
-              color: chartThemeData.axisLabelColor ??
-                  effectiveChartThemeData.axisLabelColor)
+            color:
+                chartThemeData.axisLabelColor ??
+                effectiveChartThemeData.axisLabelColor,
+          )
           .merge(chartThemeData.axisMultiLevelLabelTextStyle),
       plotBandLabelTextStyle: effectiveChartThemeData.plotBandLabelTextStyle!
           .merge(chartThemeData.plotBandLabelTextStyle),
       legendTitleTextStyle: effectiveChartThemeData.legendTitleTextStyle!
           .copyWith(
-              color: chartThemeData.legendTitleColor ??
-                  effectiveChartThemeData.legendTitleColor)
+            color:
+                chartThemeData.legendTitleColor ??
+                effectiveChartThemeData.legendTitleColor,
+          )
           .merge(chartThemeData.legendTitleTextStyle)
           .merge(widget.legend.title?.textStyle),
       legendTextStyle: effectiveChartThemeData.legendTextStyle!
           .copyWith(
-              color: chartThemeData.legendTextColor ??
-                  effectiveChartThemeData.legendTextColor)
+            color:
+                chartThemeData.legendTextColor ??
+                effectiveChartThemeData.legendTextColor,
+          )
           .merge(chartThemeData.legendTextStyle)
           .merge(widget.legend.textStyle),
       tooltipTextStyle: effectiveChartThemeData.tooltipTextStyle!
           .copyWith(
-              color: chartThemeData.tooltipLabelColor ??
-                  effectiveChartThemeData.tooltipLabelColor)
+            color:
+                chartThemeData.tooltipLabelColor ??
+                effectiveChartThemeData.tooltipLabelColor,
+          )
           .merge(chartThemeData.tooltipTextStyle)
           .merge(widget.tooltipBehavior?.textStyle),
       trackballTextStyle: effectiveChartThemeData.trackballTextStyle!
           .copyWith(
-              color: chartThemeData.crosshairLabelColor ??
-                  effectiveChartThemeData.crosshairLabelColor)
+            color:
+                chartThemeData.crosshairLabelColor ??
+                effectiveChartThemeData.crosshairLabelColor,
+          )
           .merge(chartThemeData.trackballTextStyle)
           .merge(widget.trackballBehavior?.tooltipSettings.textStyle),
       crosshairTextStyle: effectiveChartThemeData.crosshairTextStyle!
           .copyWith(
-              color: chartThemeData.crosshairLabelColor ??
-                  effectiveChartThemeData.crosshairLabelColor)
+            color:
+                chartThemeData.crosshairLabelColor ??
+                effectiveChartThemeData.crosshairLabelColor,
+          )
           .merge(chartThemeData.crosshairTextStyle),
       selectionZoomingTooltipTextStyle: effectiveChartThemeData
           .selectionZoomingTooltipTextStyle!
           .copyWith(
-              color: chartThemeData.tooltipLabelColor ??
-                  effectiveChartThemeData.tooltipLabelColor)
+            color:
+                chartThemeData.tooltipLabelColor ??
+                effectiveChartThemeData.tooltipLabelColor,
+          )
           .merge(chartThemeData.selectionZoomingTooltipTextStyle),
     );
     return chartThemeData;
@@ -1324,9 +1369,18 @@ class SfCartesianChartState extends State<SfCartesianChart>
   }
 
   Widget? _buildTooltipWidget(
-      BuildContext context, TooltipInfo? info, Size maxSize) {
-    return buildTooltipWidget(context, info, maxSize, widget.tooltipBehavior,
-        _chartThemeData, _themeData);
+    BuildContext context,
+    TooltipInfo? info,
+    Size maxSize,
+  ) {
+    return buildTooltipWidget(
+      context,
+      info,
+      maxSize,
+      widget.tooltipBehavior,
+      _chartThemeData,
+      _themeData,
+    );
   }
 
   void _buildTrackballWidget(List<TrackballDetails> details) {
@@ -1339,20 +1393,23 @@ class SfCartesianChartState extends State<SfCartesianChart>
         trackballBehavior.builder != null &&
         chartPointInfo.isNotEmpty) {
       _trackballBuilder = Stack(
-        children: List<Widget>.generate(details.length, (int index) {
-          final ChartPointInfo info = chartPointInfo[index];
-          final Widget builder =
-              trackballBehavior.builder!.call(context, details[index]);
-          return TrackballBuilderRenderObjectWidget(
-            index: index,
-            xPos: info.xPosition!,
-            yPos: info.yPosition!,
-            builder: builder,
-            chartPointInfo: chartPointInfo,
-            trackballBehavior: trackballBehavior,
-            child: builder,
-          );
-        }).toList(),
+        children:
+            List<Widget>.generate(details.length, (int index) {
+              final ChartPointInfo info = chartPointInfo[index];
+              final Widget builder = trackballBehavior.builder!.call(
+                context,
+                details[index],
+              );
+              return TrackballBuilderRenderObjectWidget(
+                index: index,
+                xPos: info.xPosition!,
+                yPos: info.yPosition!,
+                builder: builder,
+                chartPointInfo: chartPointInfo,
+                trackballBehavior: trackballBehavior,
+                child: builder,
+              );
+            }).toList(),
       );
     }
     final RenderObjectElement? trackballBuilderElement =
@@ -1376,7 +1433,9 @@ class SfCartesianChartState extends State<SfCartesianChart>
   }
 
   Widget _buildLoadingIndicator(
-      BuildContext context, BoxConstraints constraints) {
+    BuildContext context,
+    BoxConstraints constraints,
+  ) {
     if (widget.loadMoreIndicatorBuilder != null && _swipeDirection != null) {
       return widget.loadMoreIndicatorBuilder!(context, _swipeDirection!);
     }
@@ -1416,28 +1475,36 @@ class SfCartesianChartState extends State<SfCartesianChart>
       isTransposed = !isTransposed;
     }
 
-    final core.LegendPosition legendPosition =
-        effectiveLegendPosition(widget.legend);
-    final Axis orientation =
-        effectiveLegendOrientation(legendPosition, widget.legend);
+    final core.LegendPosition legendPosition = effectiveLegendPosition(
+      widget.legend,
+    );
+    final Axis orientation = effectiveLegendOrientation(
+      legendPosition,
+      widget.legend,
+    );
     Widget current = core.LegendLayout(
       key: _legendKey,
       padding: EdgeInsets.zero,
       showLegend: widget.legend.isVisible,
       legendPosition: legendPosition,
       legendAlignment: effectiveLegendAlignment(widget.legend.alignment),
-      legendTitleAlignment:
-          effectiveLegendAlignment(widget.legend.title?.alignment),
+      legendTitleAlignment: effectiveLegendAlignment(
+        widget.legend.title?.alignment,
+      ),
       itemIconBorderColor: widget.legend.iconBorderColor,
       itemIconBorderWidth: widget.legend.iconBorderWidth,
       legendBorderColor: widget.legend.borderColor,
       legendBackgroundColor: _chartThemeData.legendBackgroundColor,
       legendBorderWidth: widget.legend.borderWidth,
       itemOpacity: widget.legend.opacity,
-      legendWidthFactor:
-          percentageToWidthFactor(widget.legend.width, legendPosition),
-      legendHeightFactor:
-          percentageToHeightFactor(widget.legend.height, legendPosition),
+      legendWidthFactor: percentageToWidthFactor(
+        widget.legend.width,
+        legendPosition,
+      ),
+      legendHeightFactor: percentageToHeightFactor(
+        widget.legend.height,
+        legendPosition,
+      ),
       itemInnerSpacing: widget.legend.padding,
       itemSpacing: 0.0,
       itemPadding: widget.legend.itemPadding,
@@ -1462,7 +1529,8 @@ class SfCartesianChartState extends State<SfCartesianChart>
         crosshairBehavior: widget.crosshairBehavior,
         trackballBehavior: widget.trackballBehavior,
         zoomPanBehavior: widget.zoomPanBehavior,
-        hasLoadingIndicator: widget.loadMoreIndicatorBuilder != null ||
+        hasLoadingIndicator:
+            widget.loadMoreIndicatorBuilder != null ||
             widget.onPlotAreaSwipe != null,
         onChartTouchInteractionDown: widget.onChartTouchInteractionDown,
         onChartTouchInteractionMove: widget.onChartTouchInteractionMove,
@@ -1470,20 +1538,6 @@ class SfCartesianChartState extends State<SfCartesianChart>
         plotAreaBackgroundImage: widget.plotAreaBackgroundImage,
         plotAreaBackgroundColor: _chartThemeData.plotAreaBackgroundColor,
         children: <Widget>[
-          CartesianAxes(
-            vsync: this,
-            enableAxisAnimation: widget.enableAxisAnimation,
-            isTransposed: isTransposed,
-            onAxisLabelTapped: widget.onAxisLabelTapped,
-            onActualRangeChanged: widget.onActualRangeChanged,
-            indicators: widget.indicators,
-            chartThemeData: _chartThemeData,
-            children: <ChartAxis>[
-              widget.primaryXAxis,
-              widget.primaryYAxis,
-              ...widget.axes
-            ],
-          ),
           CartesianChartPlotArea(
             vsync: this,
             localizations: _localizations,
@@ -1514,6 +1568,20 @@ class SfCartesianChartState extends State<SfCartesianChart>
             chartThemeData: _chartThemeData,
             themeData: _themeData,
             children: widget.series,
+          ),
+          CartesianAxes(
+            vsync: this,
+            enableAxisAnimation: widget.enableAxisAnimation,
+            isTransposed: isTransposed,
+            onAxisLabelTapped: widget.onAxisLabelTapped,
+            onActualRangeChanged: widget.onActualRangeChanged,
+            indicators: widget.indicators,
+            chartThemeData: _chartThemeData,
+            children: <ChartAxis>[
+              widget.primaryXAxis,
+              widget.primaryYAxis,
+              ...widget.axes,
+            ],
           ),
           if (widget.indicators.isNotEmpty)
             IndicatorStack(
@@ -1564,8 +1632,10 @@ class SfCartesianChartState extends State<SfCartesianChart>
                   opacity: 1.0,
                   child: CustomLayoutBuilder(
                     key: _trackballBuilderKey,
-                    builder:
-                        (BuildContext context, BoxConstraints constraints) {
+                    builder: (
+                      BuildContext context,
+                      BoxConstraints constraints,
+                    ) {
                       return _trackballBuilder ?? const SizedBox(height: 0);
                     },
                   ),
@@ -1586,8 +1656,9 @@ class SfCartesianChartState extends State<SfCartesianChart>
                   opacity: widget.tooltipBehavior!.opacity,
                   borderColor: widget.tooltipBehavior!.borderColor,
                   borderWidth: widget.tooltipBehavior!.borderWidth,
-                  color: (widget.tooltipBehavior!.color ??
-                      _chartThemeData.tooltipColor)!,
+                  color:
+                      (widget.tooltipBehavior!.color ??
+                          _chartThemeData.tooltipColor)!,
                   showDuration: widget.tooltipBehavior!.duration.toInt(),
                   shadowColor: widget.tooltipBehavior!.shadowColor,
                   elevation: widget.tooltipBehavior!.elevation,

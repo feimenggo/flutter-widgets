@@ -206,10 +206,7 @@ class ChartPoint<D> with Diagnosticable {
 
 class CircularChartPoint<D> extends ChartPoint<D> {
   /// Creating an argument constructor of [CircularChartPoint] class.
-  CircularChartPoint({
-    super.x,
-    super.y,
-  });
+  CircularChartPoint({super.x, super.y});
 
   /// Degree of chart point.
   num? degree;
@@ -415,7 +412,7 @@ class ChartPointInfo {
   dynamic series;
 
   /// Cartesian chart point.
-  CartesianChartPoint? chartPoint;
+  CartesianChartPoint<dynamic>? chartPoint;
 
   /// X position of the label.
   double? xPosition;

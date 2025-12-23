@@ -14,6 +14,10 @@ import 'package:flutter/gestures.dart'
         VerticalDragGestureRecognizer;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'helper/helper.dart'
+    // On web: uses HTML Canvas 2D implementations (web_helper.dart).
+    // Elsewhere: uses no-op stubs (helper.dart) because there is no HTML canvas.
+    if (dart.library.js_interop) 'helper/web_helper.dart';
 
 const double _kMinimumStrokeWidth = 0.8;
 const double _kMaximumStrokeWidth = 5.0;
@@ -162,16 +166,16 @@ class SfSignaturePad extends StatefulWidget {
   ///      print("Signature has been completed in Signature Pad");
   ///    });
   /// ```
-  const SfSignaturePad(
-      {Key? key,
-      this.minimumStrokeWidth = _kMinimumStrokeWidth,
-      this.maximumStrokeWidth = _kMaximumStrokeWidth,
-      this.backgroundColor,
-      this.strokeColor,
-      this.onDrawStart,
-      this.onDraw,
-      this.onDrawEnd})
-      : super(key: key);
+  const SfSignaturePad({
+    Key? key,
+    this.minimumStrokeWidth = _kMinimumStrokeWidth,
+    this.maximumStrokeWidth = _kMaximumStrokeWidth,
+    this.backgroundColor,
+    this.strokeColor,
+    this.onDrawStart,
+    this.onDraw,
+    this.onDrawEnd,
+  }) : super(key: key);
 
   /// The minimum width of the signature stroke.
   ///
@@ -369,8 +373,9 @@ class SfSignaturePadState extends State<SfSignaturePad> {
   Future<ui.Image> toImage({double pixelRatio = 1.0}) {
     final RenderObject? signatureRenderBox = context.findRenderObject();
     // ignore: avoid_as
-    return (signatureRenderBox! as RenderSignaturePad)
-        .toImage(pixelRatio: pixelRatio);
+    return (signatureRenderBox! as RenderSignaturePad).toImage(
+      pixelRatio: pixelRatio,
+    );
   }
 
   /// Clears all the signature strokes in the [SfSignaturePad].
@@ -457,13 +462,14 @@ class SfSignaturePadState extends State<SfSignaturePad> {
         widget.strokeColor ?? (isDarkTheme ? Colors.white : Colors.black);
 
     return _SfSignaturePadRenderObjectWidget(
-        minimumStrokeWidth: widget.minimumStrokeWidth,
-        maximumStrokeWidth: widget.maximumStrokeWidth,
-        backgroundColor: backgroundColor,
-        strokeColor: strokeColor,
-        onDrawStart: widget.onDrawStart,
-        onDraw: widget.onDraw,
-        onDrawEnd: widget.onDrawEnd);
+      minimumStrokeWidth: widget.minimumStrokeWidth,
+      maximumStrokeWidth: widget.maximumStrokeWidth,
+      backgroundColor: backgroundColor,
+      strokeColor: strokeColor,
+      onDrawStart: widget.onDrawStart,
+      onDraw: widget.onDraw,
+      onDrawEnd: widget.onDrawEnd,
+    );
   }
 }
 
@@ -490,19 +496,22 @@ class _SfSignaturePadRenderObjectWidget extends LeafRenderObjectWidget {
   @override
   RenderObject createRenderObject(BuildContext context) {
     return RenderSignaturePad(
-        minimumStrokeWidth: minimumStrokeWidth,
-        maximumStrokeWidth: maximumStrokeWidth,
-        backgroundColor: backgroundColor,
-        strokeColor: strokeColor,
-        onDrawEnd: onDrawEnd,
-        onDraw: onDraw,
-        onDrawStart: onDrawStart,
-        gestureSettings: MediaQuery.of(context).gestureSettings);
+      minimumStrokeWidth: minimumStrokeWidth,
+      maximumStrokeWidth: maximumStrokeWidth,
+      backgroundColor: backgroundColor,
+      strokeColor: strokeColor,
+      onDrawEnd: onDrawEnd,
+      onDraw: onDraw,
+      onDrawStart: onDrawStart,
+      gestureSettings: MediaQuery.of(context).gestureSettings,
+    );
   }
 
   @override
   void updateRenderObject(
-      BuildContext context, RenderSignaturePad renderObject) {
+    BuildContext context,
+    RenderSignaturePad renderObject,
+  ) {
     renderObject
       ..minimumStrokeWidth = minimumStrokeWidth
       ..maximumStrokeWidth = maximumStrokeWidth
@@ -517,56 +526,61 @@ class _SfSignaturePadRenderObjectWidget extends LeafRenderObjectWidget {
 /// A render object for [SfSignaturePad] widget.
 class RenderSignaturePad extends RenderBox {
   /// Creates a new instance of [RenderSignaturePad].
-  RenderSignaturePad(
-      {required double minimumStrokeWidth,
-      required double maximumStrokeWidth,
-      required Color backgroundColor,
-      required Color strokeColor,
-      required DeviceGestureSettings gestureSettings,
-      SignatureOnDrawStartCallback? onDrawStart,
-      SignatureDrawCallback? onDraw,
-      VoidCallback? onDrawEnd})
-      : _minimumStrokeWidth = minimumStrokeWidth,
-        _maximumStrokeWidth = maximumStrokeWidth,
-        _backgroundColor = backgroundColor,
-        _strokeColor = strokeColor,
-        _onDrawStart = onDrawStart,
-        _onDraw = onDraw,
-        _gestureArenaTeam = GestureArenaTeam(),
-        _onDrawEnd = onDrawEnd {
-    _panGestureRecognizer = PanGestureRecognizer()
-      ..team = _gestureArenaTeam
-      ..onStart = _handleDragStart
-      ..onUpdate = _handleDragUpdate
-      ..onEnd = _handleDragEnd
-      ..gestureSettings = gestureSettings
-      ..dragStartBehavior = DragStartBehavior.down;
+  RenderSignaturePad({
+    required double minimumStrokeWidth,
+    required double maximumStrokeWidth,
+    required Color backgroundColor,
+    required Color strokeColor,
+    required DeviceGestureSettings gestureSettings,
+    SignatureOnDrawStartCallback? onDrawStart,
+    SignatureDrawCallback? onDraw,
+    VoidCallback? onDrawEnd,
+  }) : _minimumStrokeWidth = minimumStrokeWidth,
+       _maximumStrokeWidth = maximumStrokeWidth,
+       _backgroundColor = backgroundColor,
+       _strokeColor = strokeColor,
+       _onDrawStart = onDrawStart,
+       _onDraw = onDraw,
+       _gestureArenaTeam = GestureArenaTeam(),
+       _onDrawEnd = onDrawEnd {
+    _panGestureRecognizer =
+        PanGestureRecognizer()
+          ..team = _gestureArenaTeam
+          ..onStart = _handleDragStart
+          ..onUpdate = _handleDragUpdate
+          ..onEnd = _handleDragEnd
+          ..gestureSettings = gestureSettings
+          ..dragStartBehavior = DragStartBehavior.down;
 
-    _verticalDragGestureRecognizer = VerticalDragGestureRecognizer()
-      ..team = _gestureArenaTeam
-      ..gestureSettings = gestureSettings
-      ..onStart = _dragStart;
+    _verticalDragGestureRecognizer =
+        VerticalDragGestureRecognizer()
+          ..team = _gestureArenaTeam
+          ..gestureSettings = gestureSettings
+          ..onStart = _dragStart;
 
-    _horizontalDragGestureRecognizer = HorizontalDragGestureRecognizer()
-      ..team = _gestureArenaTeam
-      ..gestureSettings = gestureSettings
-      ..onStart = _dragStart;
+    _horizontalDragGestureRecognizer =
+        HorizontalDragGestureRecognizer()
+          ..team = _gestureArenaTeam
+          ..gestureSettings = gestureSettings
+          ..onStart = _dragStart;
 
     _tapGestureRecognizer = TapGestureRecognizer()..onTapUp = _handleTapUp;
 
     _gestureArenaTeam.captain = _panGestureRecognizer;
 
-    _paintStrokeStyle = Paint()
-      ..color = _strokeColor
-      ..strokeWidth = _kMaximumStrokeWidth
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.fill
-      ..isAntiAlias = true;
+    _paintStrokeStyle =
+        Paint()
+          ..color = _strokeColor
+          ..strokeWidth = _kMaximumStrokeWidth
+          ..strokeCap = StrokeCap.round
+          ..style = PaintingStyle.fill
+          ..isAntiAlias = true;
 
-    _paintBackgroundStyle = Paint()
-      ..color = backgroundColor
-      ..style = PaintingStyle.fill
-      ..isAntiAlias = true;
+    _paintBackgroundStyle =
+        Paint()
+          ..color = backgroundColor
+          ..style = PaintingStyle.fill
+          ..isAntiAlias = true;
 
     _restrictBezierPathCalculation = _minimumStrokeWidth == _maximumStrokeWidth;
     _data = <List<_TouchPoint>>[];
@@ -810,8 +824,10 @@ class RenderSignaturePad extends RenderBox {
   }
 
   void _handleTapUp(TapUpDetails details) {
-    final _TouchPoint touchPoint =
-        _TouchPoint(x: details.localPosition.dx, y: details.localPosition.dy);
+    final _TouchPoint touchPoint = _TouchPoint(
+      x: details.localPosition.dx,
+      y: details.localPosition.dy,
+    );
     final List<_TouchPoint> newPointGroup = <_TouchPoint>[touchPoint];
     if (onDrawStart != null && onDrawStart!()) {
       return;
@@ -871,12 +887,16 @@ class RenderSignaturePad extends RenderBox {
 
     final double x = touchOffset.dx;
     final double y = touchOffset.dy;
-    final _TouchPoint point =
-        _TouchPoint(x: x, y: y, time: DateTime.now().millisecondsSinceEpoch);
+    final _TouchPoint point = _TouchPoint(
+      x: x,
+      y: y,
+      time: DateTime.now().millisecondsSinceEpoch,
+    );
     final List<_TouchPoint> lastPoints = _data[_data.length - 1];
-    final double distance = lastPoints.isNotEmpty
-        ? _distance(lastPoints[lastPoints.length - 1], point)
-        : 1;
+    final double distance =
+        lastPoints.isNotEmpty
+            ? _distance(lastPoints[lastPoints.length - 1], point)
+            : 1;
     if (distance > 0) {
       if (!_restrictBezierPathCalculation) {
         final _Bezier? curve = _calculateBezierPath(point);
@@ -908,12 +928,17 @@ class RenderSignaturePad extends RenderBox {
       final _TouchPoint endPoint = _lastPoints[2];
       final double velocity =
           _velocityFilterWeight * _velocity(startPoint, endPoint) +
-              (1 - _velocityFilterWeight) * _lastVelocity;
-      final double newWidth =
-          max(_maximumStrokeWidth / (velocity + 1), _minimumStrokeWidth);
+          (1 - _velocityFilterWeight) * _lastVelocity;
+      final double newWidth = max(
+        _maximumStrokeWidth / (velocity + 1),
+        _minimumStrokeWidth,
+      );
 
       final _Bezier curve = _Bezier.fromPoints(
-          points: _lastPoints, start: _lastWidth, end: newWidth);
+        points: _lastPoints,
+        start: _lastWidth,
+        end: newWidth,
+      );
       _lastPoints.removeAt(0);
       _lastVelocity = velocity;
       _lastWidth = newWidth;
@@ -944,8 +969,10 @@ class RenderSignaturePad extends RenderBox {
       y += 3 * u * tt * curve.control2.y;
       y += ttt * curve.endPoint.y;
 
-      final double width =
-          min(curve.startWidth + ttt * widthDelta, _maximumStrokeWidth);
+      final double width = min(
+        curve.startWidth + ttt * widthDelta,
+        _maximumStrokeWidth,
+      );
 
       _bezierPoints.add(_CachePoint(x: x, y: y, width: width));
       _currentPath.addArc(Rect.fromLTWH(x, y, width, width), 0, 180);
@@ -971,8 +998,10 @@ class RenderSignaturePad extends RenderBox {
   ///  * [renderToContext2D], renders the signature to a HTML canvas.
   Future<ui.Image> toImage({double pixelRatio = 1.0}) async {
     // ignore: avoid_as
-    return (layer! as OffsetLayer)
-        .toImage(Offset.zero & size, pixelRatio: pixelRatio);
+    return (layer! as OffsetLayer).toImage(
+      Offset.zero & size,
+      pixelRatio: pixelRatio,
+    );
   }
 
   /// Clears the signature strokes in [RenderSignaturePad].
@@ -1002,7 +1031,10 @@ class RenderSignaturePad extends RenderBox {
         for (int i = 0; i < points.length; i++) {
           final _TouchPoint basicPoint = points[i];
           final _TouchPoint point = _TouchPoint(
-              x: basicPoint.x, y: basicPoint.y, time: basicPoint.time);
+            x: basicPoint.x,
+            y: basicPoint.y,
+            time: basicPoint.time,
+          );
           if (i == 0) {
             _reset();
             _currentPath = Path();
@@ -1035,50 +1067,73 @@ class RenderSignaturePad extends RenderBox {
         '${(backgroundColor.r * 255).toInt()},${(backgroundColor.g * 255).toInt()},${(backgroundColor.b * 255).toInt()},${backgroundColor.a.toStringAsFixed(2)}';
 
     //Drawing the background of the SignaturePad
-    context2D.fillStyle = 'rgba($backgroundFillColor)';
-    context2D.fillRect(0, 0, size.width, size.height);
-    context2D.fill();
+    fillStyle(context2D, backgroundFillColor);
+    fillRect(context2D, size);
+    fill(context2D);
 
-    context2D.beginPath();
+    beginPath(context2D);
 
     if (!_restrictBezierPathCalculation) {
       for (int i = 0; i < _dotPoints.length; i++) {
         final Offset point = _dotPoints[i];
-        context2D.moveTo(point.dx, point.dy);
-        context2D.arc(point.dx, point.dy,
-            (_minimumStrokeWidth + _maximumStrokeWidth) / 2, 0, pi * 2, true);
+        drawContext2DArc(
+          context2D,
+          point.dx,
+          point.dy,
+          (_minimumStrokeWidth + _maximumStrokeWidth) / 2,
+          0,
+          pi * 2,
+          true,
+        );
       }
 
       for (int i = 0; i < _bezierPoints.length; i++) {
-        context2D.moveTo(_bezierPoints[i].x, _bezierPoints[i].y);
-        context2D.arc(_bezierPoints[i].x, _bezierPoints[i].y,
-            _bezierPoints[i].width / 2, 0, 2 * pi, false);
+        drawContext2DArc(
+          context2D,
+          _bezierPoints[i].x,
+          _bezierPoints[i].y,
+          _bezierPoints[i].width / 2,
+          0,
+          2 * pi,
+          false,
+        );
       }
 
-      context2D.fillStyle = 'rgba($strokePenColor)';
-      context2D.fill();
+      fillStyle(context2D, strokePenColor);
+      fill(context2D);
     } else {
       for (int i = 0; i < _data.length; i++) {
         if (_data[i].length == 1) {
           final _TouchPoint point = _data[i][0];
-          context2D.moveTo(point.x, point.y);
-          context2D.arc(point.x, point.y,
-              (_minimumStrokeWidth + _maximumStrokeWidth) / 2, 0, pi * 2, true);
-          context2D.fillStyle = 'rgba($strokePenColor)';
-          context2D.fill();
+          drawContext2DArc(
+            context2D,
+            point.x,
+            point.y,
+            (_minimumStrokeWidth + _maximumStrokeWidth) / 2,
+            0,
+            pi * 2,
+            true,
+          );
+          fillStyle(context2D, strokePenColor);
+          fill(context2D);
         } else {
           final List<_TouchPoint> drawPath = _data[i];
           for (int i = 0; i < drawPath.length; i++) {
             if (i < drawPath.length - 1) {
-              context2D.moveTo(drawPath[i].x, drawPath[i].y);
-              context2D.lineTo(drawPath[i + 1].x, drawPath[i + 1].y);
+              drawContext2DLine(
+                context2D,
+                drawPath[i].x,
+                drawPath[i].y,
+                drawPath[i + 1].x,
+                drawPath[i + 1].y,
+              );
             }
           }
 
-          context2D.lineWidth = _maximumStrokeWidth;
-          context2D.strokeStyle = 'rgba($strokePenColor)';
-          context2D.lineCap = 'round';
-          context2D.stroke();
+          lineWidth(context2D, _maximumStrokeWidth);
+          strokeStyle(context2D, strokePenColor);
+          lineCap(context2D, 'round');
+          stroke(context2D);
         }
       }
     }
@@ -1087,64 +1142,79 @@ class RenderSignaturePad extends RenderBox {
   @override
   void paint(PaintingContext context, Offset offset) {
     context.pushClipRect(
-        needsCompositing, offset, Rect.fromLTWH(0, 0, size.width, size.height),
-        (PaintingContext context, Offset offset) {
-      final Canvas canvas = context.canvas;
+      needsCompositing,
+      offset,
+      Rect.fromLTWH(0, 0, size.width, size.height),
+      (PaintingContext context, Offset offset) {
+        final Canvas canvas = context.canvas;
 
-      //Drawing the background of the SignaturePad
-      canvas.drawRect(
+        //Drawing the background of the SignaturePad
+        canvas.drawRect(
           Rect.fromLTWH(offset.dx, offset.dy, size.width, size.height),
-          _paintBackgroundStyle);
+          _paintBackgroundStyle,
+        );
 
-      if (_restrictBezierPathCalculation) {
-        _paintStrokeStyle.strokeWidth = _minimumStrokeWidth;
-        for (int i = 0; i < _data.length; i++) {
-          if (_data[i].length == 1) {
-            final _TouchPoint point = _data[i][0];
-            canvas.drawCircle(
+        if (_restrictBezierPathCalculation) {
+          _paintStrokeStyle.strokeWidth = _minimumStrokeWidth;
+          for (int i = 0; i < _data.length; i++) {
+            if (_data[i].length == 1) {
+              final _TouchPoint point = _data[i][0];
+              canvas.drawCircle(
                 Offset(point.x, point.y),
                 (_minimumStrokeWidth + _maximumStrokeWidth) / 2,
-                _paintStrokeStyle);
-          } else {
-            final List<_TouchPoint> path = _data[i];
-            for (int i = 0; i < path.length; i++) {
-              if (i < path.length - 1) {
-                canvas.drawLine(
-                  Offset(path[i].x, path[i].y),
-                  Offset(path[i + 1].x, path[i + 1].y),
-                  _paintStrokeStyle,
-                );
+                _paintStrokeStyle,
+              );
+            } else {
+              final List<_TouchPoint> path = _data[i];
+              for (int i = 0; i < path.length; i++) {
+                if (i < path.length - 1) {
+                  canvas.drawLine(
+                    Offset(path[i].x, path[i].y),
+                    Offset(path[i + 1].x, path[i + 1].y),
+                    _paintStrokeStyle,
+                  );
+                }
               }
             }
           }
-        }
-      } else {
-        if (_dotPoints.isNotEmpty) {
-          _paintStrokeStyle.strokeWidth =
-              (_minimumStrokeWidth + _maximumStrokeWidth) / 2;
-          canvas.drawPoints(ui.PointMode.points, _dotPoints, _paintStrokeStyle);
-        }
+        } else {
+          if (_dotPoints.isNotEmpty) {
+            _paintStrokeStyle.strokeWidth =
+                (_minimumStrokeWidth + _maximumStrokeWidth) / 2;
+            canvas.drawPoints(
+              ui.PointMode.points,
+              _dotPoints,
+              _paintStrokeStyle,
+            );
+          }
 
-        if (_pathCollection.isNotEmpty) {
-          _paintStrokeStyle.strokeWidth = _maximumStrokeWidth;
-          for (int i = 0; i < _pathCollection.length; i++) {
-            canvas.drawPath(_pathCollection[i], _paintStrokeStyle);
+          if (_pathCollection.isNotEmpty) {
+            _paintStrokeStyle.strokeWidth = _maximumStrokeWidth;
+            for (int i = 0; i < _pathCollection.length; i++) {
+              canvas.drawPath(_pathCollection[i], _paintStrokeStyle);
+            }
           }
         }
-      }
-    });
+      },
+    );
   }
 
   @override
   void describeSemanticsConfiguration(SemanticsConfiguration config) {
     super.describeSemanticsConfiguration(config);
-    config.isFocusable = true;
+    config.isFocused = true;
   }
 }
 
 class _Bezier {
-  _Bezier(this.startPoint, this.control2, this.control1, this.endPoint,
-      this.startWidth, this.endWidth);
+  _Bezier(
+    this.startPoint,
+    this.control2,
+    this.control1,
+    this.endPoint,
+    this.startWidth,
+    this.endWidth,
+  );
 
   final _TouchPoint startPoint;
   final _TouchPoint control2;
@@ -1153,10 +1223,11 @@ class _Bezier {
   final double startWidth;
   final double endWidth;
 
-  static _Bezier fromPoints(
-      {required List<_TouchPoint> points,
-      required double start,
-      required double end}) {
+  static _Bezier fromPoints({
+    required List<_TouchPoint> points,
+    required double start,
+    required double end,
+  }) {
     final _TouchPoint c2 =
         calculateControlPoints(points[0], points[1], points[2])[1];
     final _TouchPoint c3 =
@@ -1165,16 +1236,23 @@ class _Bezier {
   }
 
   static List<_TouchPoint> calculateControlPoints(
-      _TouchPoint s1, _TouchPoint s2, _TouchPoint s3) {
+    _TouchPoint s1,
+    _TouchPoint s2,
+    _TouchPoint s3,
+  ) {
     final double dx1 = s1.x - s2.x;
     final double dy1 = s1.y - s2.y;
     final double dx2 = s2.x - s3.x;
     final double dy2 = s2.y - s3.y;
 
-    final Point<double> m1 =
-        Point<double>((s1.x + s2.x) / 2.0, (s1.y + s2.y) / 2.0);
-    final Point<double> m2 =
-        Point<double>((s2.x + s3.x) / 2.0, (s2.y + s3.y) / 2.0);
+    final Point<double> m1 = Point<double>(
+      (s1.x + s2.x) / 2.0,
+      (s1.y + s2.y) / 2.0,
+    );
+    final Point<double> m2 = Point<double>(
+      (s2.x + s3.x) / 2.0,
+      (s2.y + s3.y) / 2.0,
+    );
 
     final double l1 = sqrt(dx1 * dx1 + dy1 * dy1);
     final double l2 = sqrt(dx2 * dx2 + dy2 * dy2);
@@ -1206,10 +1284,20 @@ class _Bezier {
 
     for (int i = 0; i <= steps; i += 1) {
       final double t = i / steps;
-      final double cx =
-          point(t, startPoint.x, control1.x, control2.x, endPoint.x);
-      final double cy =
-          point(t, startPoint.y, control1.y, control2.y, endPoint.y);
+      final double cx = point(
+        t,
+        startPoint.x,
+        control1.x,
+        control2.x,
+        endPoint.x,
+      );
+      final double cy = point(
+        t,
+        startPoint.y,
+        control1.y,
+        control2.y,
+        endPoint.y,
+      );
 
       if (i > 0) {
         final double xDiff = cx - px;

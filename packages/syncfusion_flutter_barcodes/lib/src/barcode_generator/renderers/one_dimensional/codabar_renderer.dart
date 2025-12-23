@@ -19,7 +19,7 @@ class CodabarRenderer extends SymbologyRenderer {
       '8': '100110101',
       '9': '110100101',
       '-': '101001101',
-      '\$': '101100101',
+      r'$': '101100101',
       ':': '1101011011',
       '/': '1101101011',
       '.': '1101101101',
@@ -27,7 +27,7 @@ class CodabarRenderer extends SymbologyRenderer {
       'A': '1011001001',
       'B': '1001001011',
       'C': '1010010011',
-      'D': '1010011001'
+      'D': '1010011001',
     };
   }
 
@@ -43,7 +43,8 @@ class CodabarRenderer extends SymbologyRenderer {
           value[i] == 'C' ||
           value[i] == 'D') {
         throw ArgumentError(
-            'The provided input cannot be encoded : ${value[i]}');
+          'The provided input cannot be encoded : ${value[i]}',
+        );
       }
     }
     return true;
@@ -51,30 +52,40 @@ class CodabarRenderer extends SymbologyRenderer {
 
   @override
   void renderBarcode(
-      Canvas canvas,
-      Size size,
-      Offset offset,
-      String value,
-      Color foregroundColor,
-      TextStyle textStyle,
-      double textSpacing,
-      TextAlign textAlign,
-      bool showValue) {
+    Canvas canvas,
+    Size size,
+    Offset offset,
+    String value,
+    Color foregroundColor,
+    TextStyle textStyle,
+    double textSpacing,
+    TextAlign textAlign,
+    bool showValue,
+  ) {
     final Paint paint = getBarPaint(foregroundColor);
     final List<String?> code = _getCodeValues(value);
     final int barTotalLength = _getTotalLength(code);
-    double left = symbology!.module == null
-        ? offset.dx
-        : getLeftPosition(
-            barTotalLength, symbology!.module!, size.width, offset.dx);
+    double left =
+        symbology!.module == null
+            ? offset.dx
+            : getLeftPosition(
+              barTotalLength,
+              symbology!.module,
+              size.width,
+              offset.dx,
+            );
     final Rect barCodeRect = Rect.fromLTRB(
-        offset.dx, offset.dy, offset.dx + size.width, offset.dy + size.height);
+      offset.dx,
+      offset.dy,
+      offset.dx + size.width,
+      offset.dy + size.height,
+    );
     double ratio = 0;
     if (symbology!.module != null) {
       ratio = symbology!.module!.toDouble();
     } else {
       // Calculates the bar length based on number of individual bar codes
-      final int singleModule = (size.width ~/ barTotalLength).toInt();
+      final int singleModule = size.width ~/ barTotalLength;
       ratio = singleModule.toDouble();
       final double leftPadding = (size.width - (barTotalLength * ratio)) / 2;
       left += leftPadding;
@@ -91,7 +102,11 @@ class CodabarRenderer extends SymbologyRenderer {
         if (canDraw &&
             (left >= barCodeRect.left && left + ratio < barCodeRect.right)) {
           final Rect individualBarRect = Rect.fromLTRB(
-              left, offset.dy, left + ratio, offset.dy + barHeight);
+            left,
+            offset.dy,
+            left + ratio,
+            offset.dy + barHeight,
+          );
           canvas.drawRect(individualBarRect, paint);
         }
         left += ratio;
@@ -124,8 +139,10 @@ class CodabarRenderer extends SymbologyRenderer {
   /// Returns the encoded value of the provided input value
   List<String?> _getCodeValues(String value) {
     valueWithStartAndStopSymbol = _getValueWithStartAndStopSymbol(value);
-    final List<String?> codeBarValues =
-        List<String?>.filled(valueWithStartAndStopSymbol.length, null);
+    final List<String?> codeBarValues = List<String?>.filled(
+      valueWithStartAndStopSymbol.length,
+      null,
+    );
     for (int i = 0; i < valueWithStartAndStopSymbol.length; i++) {
       for (int j = 0; j < _codeBarMap.length; j++) {
         if (valueWithStartAndStopSymbol[i] ==

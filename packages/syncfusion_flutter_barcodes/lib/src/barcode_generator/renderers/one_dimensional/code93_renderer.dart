@@ -6,7 +6,7 @@ import 'symbology_base_renderer.dart';
 /// Represents the code93 renderer class
 class Code93Renderer extends SymbologyRenderer {
   /// Creates the code93 renderer
-  Code93Renderer({Symbology? symbology}) : super(symbology: symbology!) {
+  Code93Renderer({Symbology? symbology}) : super(symbology: symbology) {
     _character = _getCode93Character();
   }
 
@@ -18,7 +18,8 @@ class Code93Renderer extends SymbologyRenderer {
     for (int i = 0; i < value.length; i++) {
       if (!_character.contains(value[i])) {
         throw ArgumentError(
-            'The provided input cannot be encoded : ${value[i]}');
+          'The provided input cannot be encoded : ${value[i]}',
+        );
       }
     }
     return true;
@@ -66,11 +67,11 @@ class Code93Renderer extends SymbologyRenderer {
       '-': '36',
       '.': '37',
       ' ': '38',
-      '\$': '39',
+      r'$': '39',
       '/': '40',
       '+': '41',
       '%': '42',
-      '(\$)': '43',
+      r'($)': '43',
       '(/)': '44',
       '(+)': '45',
       '(%)': '46',
@@ -119,11 +120,11 @@ class Code93Renderer extends SymbologyRenderer {
       '-': '100101110',
       '.': '111010100',
       ' ': '111010010',
-      '\$': '111001010',
+      r'$': '111001010',
       '/': '101101110',
       '+': '101110110',
       '%': '110101110',
-      '(\$)': '100100110',
+      r'($)': '100100110',
       '(/)': '111010110',
       '(+)': '100110010',
       '(%)': '111011010',
@@ -132,30 +133,40 @@ class Code93Renderer extends SymbologyRenderer {
 
   @override
   void renderBarcode(
-      Canvas canvas,
-      Size size,
-      Offset offset,
-      String value,
-      Color foregroundColor,
-      TextStyle textStyle,
-      double textSpacing,
-      TextAlign textAlign,
-      bool showValue) {
+    Canvas canvas,
+    Size size,
+    Offset offset,
+    String value,
+    Color foregroundColor,
+    TextStyle textStyle,
+    double textSpacing,
+    TextAlign textAlign,
+    bool showValue,
+  ) {
     final Paint paint = getBarPaint(foregroundColor);
     final List<String> code = _getCodeValues(value);
     final int barTotalLength = _getTotalLength(code);
-    double left = symbology?.module == null
-        ? offset.dx
-        : getLeftPosition(
-            barTotalLength, symbology?.module, size.width, offset.dx);
+    double left =
+        symbology?.module == null
+            ? offset.dx
+            : getLeftPosition(
+              barTotalLength,
+              symbology?.module,
+              size.width,
+              offset.dx,
+            );
     final Rect barCodeRect = Rect.fromLTRB(
-        offset.dx, offset.dy, offset.dx + size.width, offset.dy + size.height);
+      offset.dx,
+      offset.dy,
+      offset.dx + size.width,
+      offset.dy + size.height,
+    );
     double ratio = 0;
     if (symbology?.module != null) {
       ratio = symbology!.module!.toDouble();
     } else {
       //Calculates the bar length based on number of individual bar codes
-      final int singleModule = (size.width ~/ barTotalLength).toInt();
+      final int singleModule = size.width ~/ barTotalLength;
       ratio = singleModule.toDouble();
       final double leftPadding = (size.width - (barTotalLength * ratio)) / 2;
       left += leftPadding;
@@ -171,7 +182,11 @@ class Code93Renderer extends SymbologyRenderer {
         if (canDraw &&
             (left >= barCodeRect.left && left + ratio < barCodeRect.right)) {
           final Rect individualBarRect = Rect.fromLTRB(
-              left, offset.dy, left + ratio, offset.dy + barHeight);
+            left,
+            offset.dy,
+            left + ratio,
+            offset.dy + barHeight,
+          );
           canvas.drawRect(individualBarRect, paint);
         }
         left += ratio;
@@ -183,8 +198,11 @@ class Code93Renderer extends SymbologyRenderer {
   }
 
   /// Represents the pattern collection based on the provided input
-  List<String> _getPatternCollection(String givenCharacter,
-      Map<String, String> codes, List<String> encodingValue) {
+  List<String> _getPatternCollection(
+    String givenCharacter,
+    Map<String, String> codes,
+    List<String> encodingValue,
+  ) {
     final List<String> codeKey = codes.keys.toList();
     for (int i = 0; i < givenCharacter.length; i++) {
       final int index = codeKey.indexOf(givenCharacter[i]);
@@ -246,7 +264,7 @@ class Code93Renderer extends SymbologyRenderer {
   /// Retuns the supported input symbol
   String _getCode93Character() {
     const String code93Character =
-        '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *\$/+%';
+        r'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%';
     return code93Character;
   }
 }

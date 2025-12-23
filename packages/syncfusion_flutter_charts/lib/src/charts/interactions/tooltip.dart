@@ -356,7 +356,7 @@ class TooltipBehavior extends ChartBehavior {
   ///   );
   /// }
   ///```
-  final ChartWidgetBuilder? builder;
+  final ChartWidgetBuilder<dynamic, dynamic>? builder;
 
   /// Color of the tooltip shadow.
   ///
@@ -542,8 +542,9 @@ class TooltipBehavior extends ChartBehavior {
       if (child is ChartSeriesRenderer) {
         final bool isHit = child.hitInsideSegment(primaryLocalPosition);
         if (isHit) {
-          final TooltipInfo? info =
-              child.tooltipInfo(position: primaryLocalPosition);
+          final TooltipInfo? info = child.tooltipInfo(
+            position: primaryLocalPosition,
+          );
           if (info != null) {
             parent.raiseTooltip(info);
           }
@@ -553,10 +554,12 @@ class TooltipBehavior extends ChartBehavior {
       child = childParentData.previousSibling;
     }
 
-    parent.raiseTooltip(TooltipInfo(
-      primaryPosition: primaryPosition,
-      secondaryPosition: primaryPosition,
-    ));
+    parent.raiseTooltip(
+      TooltipInfo(
+        primaryPosition: primaryPosition,
+        secondaryPosition: primaryPosition,
+      ),
+    );
   }
 
   /// Displays the tooltip at the specified x and y-values.
@@ -575,8 +578,13 @@ class TooltipBehavior extends ChartBehavior {
           xAxisName != null ? parent.axisFromName(xAxisName) : parent.xAxis;
       final RenderChartAxis? yAxis =
           yAxisName != null ? parent.axisFromName(yAxisName) : parent.yAxis;
-      final Offset position =
-          rawValueToPixelPoint(x, y, xAxis, yAxis, parent.isTransposed);
+      final Offset position = rawValueToPixelPoint(
+        x,
+        y,
+        xAxis,
+        yAxis,
+        parent.isTransposed,
+      );
       showByPixel(position.dx, position.dy);
     }
   }
@@ -594,9 +602,10 @@ class TooltipBehavior extends ChartBehavior {
         String? header;
         num? baseXValue;
         Offset? position;
-        ChartTooltipInfo? tooltipInfo;
+        ChartTooltipInfo<dynamic, dynamic>? tooltipInfo;
         final List<Color?> markerColors = <Color?>[];
-        final List<ChartTooltipInfo> tooltipInfoList = <ChartTooltipInfo>[];
+        final List<ChartTooltipInfo<dynamic, dynamic>> tooltipInfoList =
+            <ChartTooltipInfo<dynamic, dynamic>>[];
         final RenderBox? firstChild = parent.plotArea?.firstChild;
         RenderBox? series = firstChild;
         while (series != null && series.parentData != null) {
@@ -606,8 +615,9 @@ class TooltipBehavior extends ChartBehavior {
           if (series is CartesianSeriesRenderer &&
               series.isVisible() &&
               series.enableTooltip) {
-            final ChartTooltipInfo? info = series
-                .tooltipInfoFromPointIndex(pointIndex) as ChartTooltipInfo?;
+            final ChartTooltipInfo<dynamic, dynamic>? info =
+                series.tooltipInfoFromPointIndex(pointIndex)
+                    as ChartTooltipInfo?;
             if (info != null && series.index == seriesIndex) {
               baseXValue = (info.point as CartesianChartPoint).xValue;
               break;
@@ -624,8 +634,9 @@ class TooltipBehavior extends ChartBehavior {
           if (child is ChartSeriesRenderer &&
               child.isVisible() &&
               child.enableTooltip) {
-            final ChartTooltipInfo? info = child
-                .tooltipInfoFromPointIndex(pointIndex) as ChartTooltipInfo?;
+            final ChartTooltipInfo<dynamic, dynamic>? info =
+                child.tooltipInfoFromPointIndex(pointIndex)
+                    as ChartTooltipInfo?;
             if (info != null && info.text != null) {
               if (child.index == seriesIndex) {
                 tooltipInfo ??= info;
@@ -641,10 +652,14 @@ class TooltipBehavior extends ChartBehavior {
             } else {
               // It specifies for cartesian series renderer.
               if (child.canFindLinearVisibleIndexes) {
-                final int binaryIndex = binarySearch(child.xValues,
-                    baseXValue.toDouble(), 0, child.dataCount - 1);
+                final int binaryIndex = binarySearch(
+                  child.xValues,
+                  baseXValue.toDouble(),
+                  0,
+                  child.dataCount - 1,
+                );
                 if (binaryIndex >= 0) {
-                  final ChartTooltipInfo? info =
+                  final ChartTooltipInfo<dynamic, dynamic>? info =
                       child.tooltipInfoFromPointIndex(binaryIndex)
                           as ChartTooltipInfo?;
                   if (info != null && info.text != null) {
@@ -658,8 +673,9 @@ class TooltipBehavior extends ChartBehavior {
               } else {
                 final int index = child.xValues.indexOf(baseXValue);
                 if (index >= 0) {
-                  final ChartTooltipInfo? info = child
-                      .tooltipInfoFromPointIndex(index) as ChartTooltipInfo?;
+                  final ChartTooltipInfo<dynamic, dynamic>? info =
+                      child.tooltipInfoFromPointIndex(index)
+                          as ChartTooltipInfo?;
                   if (info != null && info.text != null) {
                     tooltipInfoList.add(info);
                   }
@@ -671,7 +687,7 @@ class TooltipBehavior extends ChartBehavior {
           child = childParentData.nextSibling;
         }
 
-        for (final ChartTooltipInfo info in tooltipInfoList) {
+        for (final ChartTooltipInfo<dynamic, dynamic> info in tooltipInfoList) {
           if (text == null) {
             text = '${info.text}';
           } else {
@@ -684,22 +700,24 @@ class TooltipBehavior extends ChartBehavior {
         }
 
         if (tooltipInfo != null && text != null && position != null) {
-          parent.showTooltip(ChartTooltipInfo(
-            primaryPosition: position,
-            secondaryPosition: tooltipInfo.secondaryPosition,
-            text: text,
-            data: tooltipInfo.data,
-            point: tooltipInfo.point,
-            series: tooltipInfo.series,
-            renderer: tooltipInfo.renderer,
-            header: header ?? tooltipInfo.header,
-            seriesIndex: seriesIndex,
-            pointIndex: pointIndex,
-            segmentIndex: tooltipInfo.segmentIndex,
-            markerColors: markerColors,
-            markerBorderColor: tooltipInfo.markerBorderColor,
-            markerType: tooltipInfo.markerType,
-          ));
+          parent.showTooltip(
+            ChartTooltipInfo(
+              primaryPosition: position,
+              secondaryPosition: tooltipInfo.secondaryPosition,
+              text: text,
+              data: tooltipInfo.data,
+              point: tooltipInfo.point,
+              series: tooltipInfo.series,
+              renderer: tooltipInfo.renderer,
+              header: header ?? tooltipInfo.header,
+              seriesIndex: seriesIndex,
+              pointIndex: pointIndex,
+              segmentIndex: tooltipInfo.segmentIndex,
+              markerColors: markerColors,
+              markerBorderColor: tooltipInfo.markerBorderColor,
+              markerType: tooltipInfo.markerType,
+            ),
+          );
         }
       } else {
         parent.plotArea?.visitChildren((RenderObject child) {
@@ -707,8 +725,9 @@ class TooltipBehavior extends ChartBehavior {
               child.isVisible() &&
               child.enableTooltip) {
             if (child.index == seriesIndex) {
-              final TooltipInfo? info =
-                  child.tooltipInfoFromPointIndex(pointIndex);
+              final TooltipInfo? info = child.tooltipInfoFromPointIndex(
+                pointIndex,
+              );
               if (info != null) {
                 parent.showTooltip(info);
               }
@@ -785,13 +804,13 @@ class ChartTooltipInfo<T, D> extends TooltipInfo {
       point: point ?? this.point,
       series: series ?? this.series,
       renderer: renderer ?? this.renderer,
-      header: name ?? this.header,
+      header: name ?? header,
       seriesIndex: seriesIndex ?? this.seriesIndex,
       segmentIndex: segmentIndex ?? this.segmentIndex,
       pointIndex: pointIndex ?? this.pointIndex,
       markerColors: markerColors ?? this.markerColors,
       markerBorderColor: markerBorderColor ?? this.markerBorderColor,
-      markerType: markerShape ?? this.markerType,
+      markerType: markerShape ?? markerType,
     );
   }
 

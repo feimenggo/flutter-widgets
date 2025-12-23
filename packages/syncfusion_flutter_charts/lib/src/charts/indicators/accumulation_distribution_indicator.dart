@@ -46,22 +46,27 @@ class AccumulationDistributionIndicator<T, D> extends TechnicalIndicator<T, D> {
     super.signalLineWidth,
     super.onRenderDetailsUpdate,
   }) : super(
-          xValueMapper: xValueMapper != null && dataSource != null
-              ? (int index) => xValueMapper(dataSource[index], index)
-              : null,
-          highValueMapper: highValueMapper != null && dataSource != null
-              ? (int index) => highValueMapper(dataSource[index], index)
-              : null,
-          lowValueMapper: lowValueMapper != null && dataSource != null
-              ? (int index) => lowValueMapper(dataSource[index], index)
-              : null,
-          closeValueMapper: closeValueMapper != null && dataSource != null
-              ? (int index) => closeValueMapper(dataSource[index], index)
-              : null,
-          volumeValueMapper: volumeValueMapper != null && dataSource != null
-              ? (int index) => volumeValueMapper(dataSource[index], index)
-              : null,
-        );
+         xValueMapper:
+             xValueMapper != null && dataSource != null
+                 ? (int index) => xValueMapper(dataSource[index], index)
+                 : null,
+         highValueMapper:
+             highValueMapper != null && dataSource != null
+                 ? (int index) => highValueMapper(dataSource[index], index)
+                 : null,
+         lowValueMapper:
+             lowValueMapper != null && dataSource != null
+                 ? (int index) => lowValueMapper(dataSource[index], index)
+                 : null,
+         closeValueMapper:
+             closeValueMapper != null && dataSource != null
+                 ? (int index) => closeValueMapper(dataSource[index], index)
+                 : null,
+         volumeValueMapper:
+             volumeValueMapper != null && dataSource != null
+                 ? (int index) => volumeValueMapper(dataSource[index], index)
+                 : null,
+       );
 
   @override
   bool operator ==(Object other) {
@@ -115,7 +120,7 @@ class AccumulationDistributionIndicator<T, D> extends TechnicalIndicator<T, D> {
       legendIconType,
       legendItemText,
       signalLineColor,
-      signalLineWidth
+      signalLineWidth,
     ];
     return Object.hashAll(values);
   }
@@ -137,15 +142,15 @@ class ADIndicatorWidget extends IndicatorWidget {
 
   /// Create the ADIndicatorRenderer renderer.
   @override
-  ADIndicatorRenderer createRenderer() {
+  ADIndicatorRenderer<dynamic, dynamic> createRenderer() {
     return ADIndicatorRenderer();
   }
 
   @override
   RenderObject createRenderObject(BuildContext context) {
-    final ADIndicatorRenderer renderer =
+    final ADIndicatorRenderer<dynamic, dynamic> renderer =
         super.createRenderObject(context) as ADIndicatorRenderer;
-    final AccumulationDistributionIndicator adi =
+    final AccumulationDistributionIndicator<dynamic, dynamic> adi =
         indicator as AccumulationDistributionIndicator;
 
     renderer
@@ -158,9 +163,11 @@ class ADIndicatorWidget extends IndicatorWidget {
 
   @override
   void updateRenderObject(
-      BuildContext context, ADIndicatorRenderer renderObject) {
+    BuildContext context,
+    ADIndicatorRenderer<dynamic, dynamic> renderObject,
+  ) {
     super.updateRenderObject(context, renderObject);
-    final AccumulationDistributionIndicator adi =
+    final AccumulationDistributionIndicator<dynamic, dynamic> adi =
         indicator as AccumulationDistributionIndicator;
 
     renderObject
@@ -387,8 +394,9 @@ class ADIndicatorRenderer<T, D> extends IndicatorRenderer<T, D> {
         signalLineColor,
         dashArray,
       );
-      final TechnicalIndicatorRenderDetails details =
-          onRenderDetailsUpdate!(params);
+      final TechnicalIndicatorRenderDetails details = onRenderDetailsUpdate!(
+        params,
+      );
       strokePaint
         ..color = details.signalLineColor
         ..strokeWidth = details.signalLineWidth;
@@ -405,8 +413,12 @@ class ADIndicatorRenderer<T, D> extends IndicatorRenderer<T, D> {
   void onPaint(PaintingContext context, Offset offset) {
     if (signalLinePoints.isNotEmpty) {
       context.canvas.save();
-      final Rect clip = clipRect(paintBounds, animationFactor,
-          isInversed: xAxis!.isInversed, isTransposed: isTransposed);
+      final Rect clip = clipRect(
+        paintBounds,
+        animationFactor,
+        isInversed: xAxis!.isInversed,
+        isTransposed: isTransposed,
+      );
       context.canvas.clipRect(clip);
 
       final int length = signalLinePoints.length - 1;

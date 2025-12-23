@@ -1,5 +1,43 @@
 ## Unreleased
 
+* No changes.
+
+## [31.2.15] - 11/25/2025
+
+**General**
+
+*  The compatible version of all our Flutter widgets has been updated to Flutter SDK 3.38.
+
+## [31.1.20] - 09/17/2025
+
+**General**
+
+*  The compatible version of all our Flutter widgets has been updated to Flutter SDK 3.35.
+
+## [30.1.38] - 02/07/2025
+
+### Breaking Changes
+
+Following breaking changes will occur.
+
+## SfThemeData:
+
+*  The `assistThemeData` property has been renamed to `aiAssistViewThemeData`.
+
+## [30.1.37] - 25/06/2025
+
+**General**
+
+*  The compatible version of all our Flutter widgets has been updated to Flutter SDK 3.32.0.
+
+## [29.1.39] - 22/04/2025
+
+**General**
+
+* The minimum Dart version has been updated to 3.7.
+
+## [29.1.33] - 25/03/2025
+
 **General**
 
 *  The compatible version of all our Flutter widgets has been updated to Flutter SDK 3.29.0.

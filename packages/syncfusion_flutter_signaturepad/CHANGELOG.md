@@ -1,5 +1,39 @@
 ## Unreleased
 
+* No changes. 
+
+## [31.2.16] - 12/06/2025
+
+**Enhancements**
+
+* The [renderToContext2D](https://pub.dev/documentation/syncfusion_flutter_signaturepad/latest/signaturepad/SfSignaturePadState/renderToContext2D.html) method has been updated to improve signature canvas rendering on the Web platform.
+
+## [31.2.15] - 11/25/2025
+
+**General**
+
+* The compatible version of our Flutter signaturepad widget has been updated to Flutter SDK 3.38.
+
+## [31.1.20] - 09/17/2025
+
+**General**
+
+*  The compatible version of our Flutter signaturepad widget has been updated to Flutter SDK 3.35.
+
+## [30.1.37] - 06/25/2025
+
+**General**
+
+*  The compatible version of our Flutter signaturepad widget has been updated to Flutter SDK 3.32.0.
+
+## [29.1.39] - 22/04/2025
+
+**General**
+
+*  The minimum Dart version has been updated to 3.7.
+
+## [29.1.33] - 25/03/2025
+
 **General**
 
 *  The compatible version of our Flutter signaturepad widget has been updated to Flutter SDK 3.29.0.

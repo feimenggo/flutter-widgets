@@ -48,22 +48,27 @@ class MomentumIndicator<T, D> extends TechnicalIndicator<T, D> {
     this.centerLineWidth = 2,
     super.onRenderDetailsUpdate,
   }) : super(
-          xValueMapper: xValueMapper != null && dataSource != null
-              ? (int index) => xValueMapper(dataSource[index], index)
-              : null,
-          highValueMapper: highValueMapper != null && dataSource != null
-              ? (int index) => highValueMapper(dataSource[index], index)
-              : null,
-          lowValueMapper: lowValueMapper != null && dataSource != null
-              ? (int index) => lowValueMapper(dataSource[index], index)
-              : null,
-          openValueMapper: openValueMapper != null && dataSource != null
-              ? (int index) => openValueMapper(dataSource[index], index)
-              : null,
-          closeValueMapper: closeValueMapper != null && dataSource != null
-              ? (int index) => closeValueMapper(dataSource[index], index)
-              : null,
-        );
+         xValueMapper:
+             xValueMapper != null && dataSource != null
+                 ? (int index) => xValueMapper(dataSource[index], index)
+                 : null,
+         highValueMapper:
+             highValueMapper != null && dataSource != null
+                 ? (int index) => highValueMapper(dataSource[index], index)
+                 : null,
+         lowValueMapper:
+             lowValueMapper != null && dataSource != null
+                 ? (int index) => lowValueMapper(dataSource[index], index)
+                 : null,
+         openValueMapper:
+             openValueMapper != null && dataSource != null
+                 ? (int index) => openValueMapper(dataSource[index], index)
+                 : null,
+         closeValueMapper:
+             closeValueMapper != null && dataSource != null
+                 ? (int index) => closeValueMapper(dataSource[index], index)
+                 : null,
+       );
 
   /// Center line color of the momentum indicator.
   ///
@@ -187,7 +192,7 @@ class MomentumIndicator<T, D> extends TechnicalIndicator<T, D> {
       signalLineWidth,
       period,
       centerLineColor,
-      centerLineWidth
+      centerLineWidth,
     ];
     return Object.hashAll(values);
   }
@@ -209,15 +214,16 @@ class MomentumIndicatorWidget extends IndicatorWidget {
 
   // Create the MomentumIndicatorRenderer renderer.
   @override
-  MomentumIndicatorRenderer createRenderer() {
+  MomentumIndicatorRenderer<dynamic, dynamic> createRenderer() {
     return MomentumIndicatorRenderer();
   }
 
   @override
   RenderObject createRenderObject(BuildContext context) {
-    final MomentumIndicatorRenderer renderer =
+    final MomentumIndicatorRenderer<dynamic, dynamic> renderer =
         super.createRenderObject(context) as MomentumIndicatorRenderer;
-    final MomentumIndicator momentum = indicator as MomentumIndicator;
+    final MomentumIndicator<dynamic, dynamic> momentum =
+        indicator as MomentumIndicator;
 
     renderer
       ..highValueMapper = momentum.highValueMapper
@@ -233,9 +239,12 @@ class MomentumIndicatorWidget extends IndicatorWidget {
 
   @override
   void updateRenderObject(
-      BuildContext context, MomentumIndicatorRenderer renderObject) {
+    BuildContext context,
+    MomentumIndicatorRenderer<dynamic, dynamic> renderObject,
+  ) {
     super.updateRenderObject(context, renderObject);
-    final MomentumIndicator momentum = indicator as MomentumIndicator;
+    final MomentumIndicator<dynamic, dynamic> momentum =
+        indicator as MomentumIndicator;
 
     renderObject
       ..highValueMapper = momentum.highValueMapper
@@ -304,7 +313,7 @@ class MomentumIndicatorRenderer<T, D> extends IndicatorRenderer<T, D> {
           highValueMapper,
           lowValueMapper,
           openValueMapper,
-          closeValueMapper
+          closeValueMapper,
         ],
         <List<num>>[_highValues, _lowValues, _openValues, _closeValues],
       );
@@ -424,11 +433,15 @@ class MomentumIndicatorRenderer<T, D> extends IndicatorRenderer<T, D> {
   List<TrackballInfo>? trackballInfo(Offset position) {
     final List<ChartTrackballInfo<T, D>> trackballInfo =
         <ChartTrackballInfo<T, D>>[];
-    final int momentumPointIndex =
-        _findNearestPoint(signalLinePoints, position);
+    final int momentumPointIndex = _findNearestPoint(
+      signalLinePoints,
+      position,
+    );
     if (momentumPointIndex != -1) {
-      final CartesianChartPoint<D> momentumPoint =
-          _chartPoint(momentumPointIndex, 'momentum');
+      final CartesianChartPoint<D> momentumPoint = _chartPoint(
+        momentumPointIndex,
+        'momentum',
+      );
       final String text = defaultLegendItemText();
       trackballInfo.add(
         ChartTrackballInfo<T, D>(
@@ -447,20 +460,24 @@ class MomentumIndicatorRenderer<T, D> extends IndicatorRenderer<T, D> {
     }
     final int centerPointIndex = _findNearestPoint(_centerLinePoints, position);
     if (centerPointIndex != -1) {
-      final CartesianChartPoint<D> centerPoint =
-          _chartPoint(centerPointIndex, 'center');
-      trackballInfo.add(ChartTrackballInfo<T, D>(
-        position: _centerLinePoints[centerPointIndex],
-        point: centerPoint,
-        series: this,
-        pointIndex: centerPointIndex,
-        segmentIndex: centerPointIndex,
-        seriesIndex: index,
-        name: trackballCenterText,
-        header: tooltipHeaderText(centerPoint),
-        text: trackballText(centerPoint, trackballCenterText),
-        color: _centerLineColor,
-      ));
+      final CartesianChartPoint<D> centerPoint = _chartPoint(
+        centerPointIndex,
+        'center',
+      );
+      trackballInfo.add(
+        ChartTrackballInfo<T, D>(
+          position: _centerLinePoints[centerPointIndex],
+          point: centerPoint,
+          series: this,
+          pointIndex: centerPointIndex,
+          segmentIndex: centerPointIndex,
+          seriesIndex: index,
+          name: trackballCenterText,
+          header: tooltipHeaderText(centerPoint),
+          text: trackballText(centerPoint, trackballCenterText),
+          color: _centerLineColor,
+        ),
+      );
     }
 
     return trackballInfo;
@@ -507,15 +524,18 @@ class MomentumIndicatorRenderer<T, D> extends IndicatorRenderer<T, D> {
 
   CartesianChartPoint<D> _chartPoint(int pointIndex, String type) {
     return CartesianChartPoint<D>(
-      x: type == 'momentum'
-          ? xRawValues[pointIndex + period - 1]
-          : xRawValues[pointIndex],
-      xValue: type == 'momentum'
-          ? xValues[pointIndex + period]
-          : xValues[pointIndex],
-      y: type == 'momentum'
-          ? _signalLineActualValues[pointIndex].dy
-          : _centerLineActualValues[pointIndex].dy,
+      x:
+          type == 'momentum'
+              ? xRawValues[pointIndex + period - 1]
+              : xRawValues[pointIndex],
+      xValue:
+          type == 'momentum'
+              ? xValues[pointIndex + period]
+              : xValues[pointIndex],
+      y:
+          type == 'momentum'
+              ? _signalLineActualValues[pointIndex].dy
+              : _centerLineActualValues[pointIndex].dy,
     );
   }
 
@@ -524,15 +544,16 @@ class MomentumIndicatorRenderer<T, D> extends IndicatorRenderer<T, D> {
     if (onRenderDetailsUpdate != null) {
       final MomentumIndicatorRenderParams params =
           MomentumIndicatorRenderParams(
-        _centerLineActualValues.first.dy,
-        chartPoints,
-        legendItemText ?? name ?? defaultLegendItemText(),
-        signalLineWidth,
-        signalLineColor,
-        dashArray,
+            _centerLineActualValues.first.dy,
+            chartPoints,
+            legendItemText ?? name ?? defaultLegendItemText(),
+            signalLineWidth,
+            signalLineColor,
+            dashArray,
+          );
+      final TechnicalIndicatorRenderDetails details = onRenderDetailsUpdate!(
+        params,
       );
-      final TechnicalIndicatorRenderDetails details =
-          onRenderDetailsUpdate!(params);
       strokePaint
         ..color = details.signalLineColor
         ..strokeWidth = details.signalLineWidth;
@@ -550,8 +571,12 @@ class MomentumIndicatorRenderer<T, D> extends IndicatorRenderer<T, D> {
     int length = signalLinePoints.length - 1;
 
     context.canvas.save();
-    final Rect clip = clipRect(paintBounds, animationFactor,
-        isInversed: xAxis!.isInversed, isTransposed: isTransposed);
+    final Rect clip = clipRect(
+      paintBounds,
+      animationFactor,
+      isInversed: xAxis!.isInversed,
+      isTransposed: isTransposed,
+    );
     context.canvas.clipRect(clip);
 
     if (strokePaint.color != Colors.transparent &&
@@ -568,21 +593,26 @@ class MomentumIndicatorRenderer<T, D> extends IndicatorRenderer<T, D> {
     }
 
     if (_centerLinePoints.isNotEmpty) {
-      final Paint paint = Paint()
-        ..isAntiAlias = true
-        ..color = centerLineColor
-        ..strokeWidth = centerLineWidth
-        ..style = PaintingStyle.stroke;
+      final Paint paint =
+          Paint()
+            ..isAntiAlias = true
+            ..color = centerLineColor
+            ..strokeWidth = centerLineWidth
+            ..style = PaintingStyle.stroke;
 
       if (paint.color != Colors.transparent && paint.strokeWidth > 0) {
         _centerLinePath.reset();
         length = _centerLinePoints.length;
 
         _centerLinePath.moveTo(
-            _centerLinePoints.first.dx, _centerLinePoints.first.dy);
+          _centerLinePoints.first.dx,
+          _centerLinePoints.first.dy,
+        );
         for (int i = 1; i < length; i++) {
           _centerLinePath.lineTo(
-              _centerLinePoints[i].dx, _centerLinePoints[i].dy);
+            _centerLinePoints[i].dx,
+            _centerLinePoints[i].dy,
+          );
         }
         drawDashes(context.canvas, _dashArray, paint, path: _centerLinePath);
       }
